@@ -222,8 +222,9 @@ h6 {
 }
 
 .header .main-bar .logo img {
-  max-height: 28px;
-  margin-right: 8px;
+  max-height: 42px;
+  height: auto;
+  width: auto;
 }
 
 .header .main-bar .logo h1 {
@@ -1667,6 +1668,12 @@ h6 {
 .footer .footer-main .footer-widget .logo {
   display: inline-block;
   margin-bottom: 20px;
+}
+
+.footer .footer-main .footer-widget .logo img {
+  max-height: 48px;
+  height: auto;
+  width: auto;
 }
 
 .footer .footer-main .footer-widget .logo span {
@@ -4966,43 +4973,62 @@ section,
 
 .category-product-list .tile-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-  margin-top: 12px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 14px 16px 16px;
+  margin-top: 10px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.category-product-list .tile-price {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--heading-color);
+.category-product-list .tile-price-wrap {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.category-product-list .tile-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  display: inline-flex;
+  align-items: baseline;
   gap: 8px;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .category-product-list .tile-price .original-price {
-  font-size: 13px;
+  font-size: 0.85rem;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   font-weight: 400;
+  text-decoration: line-through;
 }
 
 .category-product-list .add-cart-btn {
-  padding: 8px 16px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
   border: none;
   background: var(--accent-color);
   color: var(--contrast-color);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
   white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .category-product-list .add-cart-btn:hover {
   background: color-mix(in srgb, var(--accent-color), #000 15%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .category-product-list .add-cart-btn:focus {
@@ -5021,20 +5047,16 @@ section,
 
   .category-product-list .tile-footer {
     padding: 12px;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 8px;
   }
 
   .category-product-list .add-cart-btn {
-    width: 100%;
-    text-align: center;
     padding: 8px 12px;
     font-size: 12px;
   }
 
   .category-product-list .tile-price {
-    font-size: 14px;
+    font-size: 1rem;
   }
 
   .category-product-list .tile-actions {

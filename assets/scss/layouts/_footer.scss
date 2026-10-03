@@ -84,6 +84,12 @@
         display: inline-block;
         margin-bottom: 20px;
 
+        img {
+          max-height: 48px;
+          height: auto;
+          width: auto;
+        }
+
         span {
           color: var(--heading-color);
           font-size: 26px;

@@ -315,7 +315,6 @@
    * Price range slider implementation for price filtering.
    */
   function priceRangeWidget() {
-    // Get all price range widgets on the page
     const priceRangeWidgets = document.querySelectorAll('.price-range-container');
 
     priceRangeWidgets.forEach(widget => {
@@ -330,104 +329,83 @@
 
       if (!minRange || !maxRange || !sliderProgress || !minPriceDisplay || !maxPriceDisplay || !minPriceInput || !maxPriceInput) return;
 
-      // Slider configuration
-      const sliderMin = parseInt(minRange.min);
-      const sliderMax = parseInt(minRange.max);
-      const step = parseInt(minRange.step) || 1;
+      const sliderMin = parseInt(minRange.min) || 0;
+      const sliderMax = parseInt(minRange.max) || 1000000;
 
-      // Initialize with default values
-      let minValue = parseInt(minRange.value);
-      let maxValue = parseInt(maxRange.value);
+      let minValue = parseInt(minRange.value) || sliderMin;
+      let maxValue = parseInt(maxRange.value) || sliderMax;
 
-      // Set initial values
       updateSliderProgress();
       updateDisplays();
 
-      // Min range input event
+      function notifyFilter() {
+        if (window.ShopWiseFilter && typeof window.ShopWiseFilter.applyFilters === 'function') {
+          window.ShopWiseFilter.applyFilters();
+        }
+      }
+
       minRange.addEventListener('input', function() {
         minValue = parseInt(this.value);
-
-        // Ensure min doesn't exceed max
         if (minValue > maxValue) {
           minValue = maxValue;
           this.value = minValue;
         }
-
-        // Update min price input and display
         minPriceInput.value = minValue;
         updateDisplays();
         updateSliderProgress();
+        notifyFilter();
       });
 
-      // Max range input event
       maxRange.addEventListener('input', function() {
         maxValue = parseInt(this.value);
-
-        // Ensure max isn't less than min
         if (maxValue < minValue) {
           maxValue = minValue;
           this.value = maxValue;
         }
-
-        // Update max price input and display
         maxPriceInput.value = maxValue;
         updateDisplays();
         updateSliderProgress();
+        notifyFilter();
       });
 
-      // Min price input change
       minPriceInput.addEventListener('change', function() {
         let value = parseInt(this.value) || sliderMin;
-
-        // Ensure value is within range
         value = Math.max(sliderMin, Math.min(sliderMax, value));
-
-        // Ensure min doesn't exceed max
         if (value > maxValue) {
           value = maxValue;
         }
-
-        // Update min value and range input
         minValue = value;
         this.value = value;
         minRange.value = value;
         updateDisplays();
         updateSliderProgress();
+        notifyFilter();
       });
 
-      // Max price input change
       maxPriceInput.addEventListener('change', function() {
         let value = parseInt(this.value) || sliderMax;
-
-        // Ensure value is within range
         value = Math.max(sliderMin, Math.min(sliderMax, value));
-
-        // Ensure max isn't less than min
         if (value < minValue) {
           value = minValue;
         }
-
-        // Update max value and range input
         maxValue = value;
         this.value = value;
         maxRange.value = value;
         updateDisplays();
         updateSliderProgress();
+        notifyFilter();
       });
 
-      // Apply button click
       if (applyButton) {
-        applyButton.addEventListener('click', function() {
-          // This would typically trigger a form submission or AJAX request
-          console.log(`Applying price filter: Rp ${minValue} - Rp ${maxValue}`);
-
-          // Here you would typically add code to filter products or redirect to a filtered URL
+        applyButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          notifyFilter();
         });
       }
 
-      // Helper function to update the slider progress bar
       function updateSliderProgress() {
         const range = sliderMax - sliderMin;
+        if (range <= 0) return;
         const minPercent = ((minValue - sliderMin) / range) * 100;
         const maxPercent = ((maxValue - sliderMin) / range) * 100;
 
@@ -435,14 +413,405 @@
         sliderProgress.style.width = `${maxPercent - minPercent}%`;
       }
 
-      // Helper function to update price displays
       function updateDisplays() {
         minPriceDisplay.textContent = `Rp ${Number(minValue).toLocaleString('id-ID')}`;
         maxPriceDisplay.textContent = `Rp ${Number(maxValue).toLocaleString('id-ID')}`;
       }
+
+      // Expose helper to set values programmatically
+      widget.setRangeValues = function(min, max) {
+        minValue = Math.max(sliderMin, Math.min(sliderMax, min));
+        maxValue = Math.max(sliderMin, Math.min(sliderMax, max));
+        minRange.value = minValue;
+        maxRange.value = maxValue;
+        minPriceInput.value = minValue;
+        maxPriceInput.value = maxValue;
+        updateSliderProgress();
+        updateDisplays();
+      };
     });
   }
   priceRangeWidget();
+
+  /**
+   * Live Interactive Category & Product Filter System
+   */
+  function initCategoryFilter() {
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
+
+    const productItems = Array.from(productsGrid.querySelectorAll('.product-item'));
+    const totalProducts = productItems.length;
+    const noProductsFound = document.getElementById('noProductsFound');
+    const resultsLabel = document.querySelector('.results-label');
+    const activeTagsContainer = document.getElementById('activeTagsContainer');
+    const activeTagsList = document.getElementById('activeTagsList');
+
+    const brandCheckboxes = document.querySelectorAll('.filter-widget input[type="checkbox"]');
+    const colorCheckboxes = document.querySelectorAll('.filter-widget-2 input[type="checkbox"]');
+    const brandSearchInput = document.querySelector('.brand-search-input');
+    const topPriceSelect = document.getElementById('priceRange');
+    const topSortSelect = document.getElementById('sortBy');
+    const productSearchInput = document.getElementById('productSearch');
+    const searchSubmitBtn = document.querySelector('.search-submit');
+    const clearFiltersBtn = document.querySelector('.clear-filters-btn');
+    const resetAllBtn = document.getElementById('resetAllFiltersBtn');
+    const emptyResetBtn = document.getElementById('emptyResetFilterBtn');
+    const clearBrandBtn = document.querySelector('.clear-brand-filters');
+    const clearColorBtn = document.querySelector('.clear-color-filters');
+    const categoryLinks = document.querySelectorAll('.category-tree a[data-cat]');
+
+    let activeCategory = 'all';
+
+    function getSelectedBrands() {
+      const selected = [];
+      brandCheckboxes.forEach(cb => {
+        if (cb.checked && cb.value) selected.push(cb.value.toLowerCase());
+      });
+      return selected;
+    }
+
+    function getSelectedColors() {
+      const selected = [];
+      colorCheckboxes.forEach(cb => {
+        if (cb.checked && cb.value) selected.push(cb.value.toLowerCase());
+      });
+      return selected;
+    }
+
+    function getPriceRange() {
+      const minRange = document.querySelector('.price-range-container .min-range');
+      const maxRange = document.querySelector('.price-range-container .max-range');
+      const min = minRange ? parseInt(minRange.value) || 0 : 0;
+      const max = maxRange ? parseInt(maxRange.value) || 1000000 : 1000000;
+      return { min, max };
+    }
+
+    function applyFilters() {
+      const selectedBrands = getSelectedBrands();
+      const selectedColors = getSelectedColors();
+      const { min: minPrice, max: maxPrice } = getPriceRange();
+      const query = productSearchInput ? productSearchInput.value.trim().toLowerCase() : '';
+      const sortVal = topSortSelect ? topSortSelect.value : 'featured';
+
+      let visibleCount = 0;
+      const visibleProducts = [];
+
+      productItems.forEach(item => {
+        const itemPrice = parseInt(item.dataset.price) || 0;
+        const itemBrand = (item.dataset.brand || '').toLowerCase();
+        const itemColors = (item.dataset.colors || '').toLowerCase().split(' ');
+        const itemCategory = (item.dataset.category || '').toLowerCase();
+        const itemTitle = (item.dataset.title || '').toLowerCase();
+
+        let match = true;
+
+        // Price match
+        if (itemPrice < minPrice || itemPrice > maxPrice) {
+          match = false;
+        }
+
+        // Category match
+        if (match && activeCategory !== 'all') {
+          if (!itemCategory.includes(activeCategory.toLowerCase())) {
+            match = false;
+          }
+        }
+
+        // Brand match
+        if (match && selectedBrands.length > 0) {
+          if (!selectedBrands.includes(itemBrand)) {
+            match = false;
+          }
+        }
+
+        // Color match
+        if (match && selectedColors.length > 0) {
+          const hasColor = selectedColors.some(color => itemColors.includes(color));
+          if (!hasColor) {
+            match = false;
+          }
+        }
+
+        // Search query match
+        if (match && query) {
+          if (!itemTitle.includes(query) && !itemCategory.includes(query) && !itemBrand.includes(query)) {
+            match = false;
+          }
+        }
+
+        if (match) {
+          item.style.display = '';
+          visibleCount++;
+          visibleProducts.push(item);
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Sorting
+      sortProducts(visibleProducts, sortVal);
+
+      // Empty state
+      if (noProductsFound) {
+        noProductsFound.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      // Update results count label
+      if (resultsLabel) {
+        resultsLabel.innerHTML = `Menampilkan <span class="fw-bold">${visibleCount}</span> dari <span class="fw-bold">${totalProducts}</span> produk`;
+      }
+
+      // Update active tags
+      renderActiveTags({
+        selectedBrands,
+        selectedColors,
+        minPrice,
+        maxPrice,
+        query,
+        activeCategory
+      });
+    }
+
+    function sortProducts(items, sortKey) {
+      if (!items || items.length === 0) return;
+
+      items.sort((a, b) => {
+        const priceA = parseInt(a.dataset.price) || 0;
+        const priceB = parseInt(b.dataset.price) || 0;
+        const ratingA = parseFloat(a.dataset.rating) || 0;
+        const ratingB = parseFloat(b.dataset.rating) || 0;
+        const idA = parseInt(a.dataset.id) || 0;
+        const idB = parseInt(b.dataset.id) || 0;
+        const dateA = new Date(a.dataset.date || '2026-01-01').getTime();
+        const dateB = new Date(b.dataset.date || '2026-01-01').getTime();
+
+        switch (sortKey) {
+          case 'price-asc':
+            return priceA - priceB;
+          case 'price-desc':
+            return priceB - priceA;
+          case 'rating-desc':
+            return ratingB - ratingA;
+          case 'newest':
+            return dateB - dateA;
+          case 'featured':
+          default:
+            return idA - idB;
+        }
+      });
+
+      items.forEach(el => productsGrid.appendChild(el));
+      if (noProductsFound) {
+        productsGrid.appendChild(noProductsFound);
+      }
+    }
+
+    function renderActiveTags(filterState) {
+      if (!activeTagsContainer || !activeTagsList) return;
+
+      activeTagsList.innerHTML = '';
+      const tags = [];
+
+      if (filterState.activeCategory !== 'all') {
+        const catName = filterState.activeCategory.replace(/-/g, ' ');
+        tags.push({
+          label: `Kategori: ${catName.charAt(0).toUpperCase() + catName.slice(1)}`,
+          onRemove: () => {
+            activeCategory = 'all';
+            categoryLinks.forEach(l => l.classList.remove('text-primary', 'fw-bold'));
+            applyFilters();
+          }
+        });
+      }
+
+      filterState.selectedBrands.forEach(brand => {
+        tags.push({
+          label: `Merek: ${brand.charAt(0).toUpperCase() + brand.slice(1)}`,
+          onRemove: () => {
+            const cb = Array.from(brandCheckboxes).find(b => b.value.toLowerCase() === brand);
+            if (cb) cb.checked = false;
+            applyFilters();
+          }
+        });
+      });
+
+      filterState.selectedColors.forEach(color => {
+        tags.push({
+          label: `Warna: ${color.charAt(0).toUpperCase() + color.slice(1)}`,
+          onRemove: () => {
+            const cb = Array.from(colorCheckboxes).find(c => c.value.toLowerCase() === color);
+            if (cb) cb.checked = false;
+            applyFilters();
+          }
+        });
+      });
+
+      if (filterState.minPrice > 0 || filterState.maxPrice < 1000000) {
+        tags.push({
+          label: `Rp ${filterState.minPrice.toLocaleString('id-ID')} - Rp ${filterState.maxPrice.toLocaleString('id-ID')}`,
+          onRemove: () => {
+            const container = document.querySelector('.price-range-container');
+            if (container && container.setRangeValues) {
+              container.setRangeValues(0, 1000000);
+            }
+            if (topPriceSelect) topPriceSelect.value = 'all';
+            applyFilters();
+          }
+        });
+      }
+
+      if (filterState.query) {
+        tags.push({
+          label: `Cari: "${filterState.query}"`,
+          onRemove: () => {
+            if (productSearchInput) productSearchInput.value = '';
+            applyFilters();
+          }
+        });
+      }
+
+      if (tags.length > 0) {
+        activeTagsContainer.style.display = 'flex';
+        tags.forEach(tag => {
+          const tagSpan = document.createElement('span');
+          tagSpan.className = 'tag-item';
+          tagSpan.textContent = tag.label + ' ';
+          const removeBtn = document.createElement('button');
+          removeBtn.className = 'tag-remove';
+          removeBtn.setAttribute('aria-label', 'Hapus filter');
+          removeBtn.innerHTML = '<i class="bi bi-x"></i>';
+          removeBtn.addEventListener('click', tag.onRemove);
+          tagSpan.appendChild(removeBtn);
+          activeTagsList.appendChild(tagSpan);
+        });
+      } else {
+        activeTagsContainer.style.display = 'none';
+      }
+    }
+
+    function resetAllFilters() {
+      activeCategory = 'all';
+      categoryLinks.forEach(l => l.classList.remove('text-primary', 'fw-bold'));
+      brandCheckboxes.forEach(cb => { cb.checked = false; });
+      colorCheckboxes.forEach(cb => { cb.checked = false; });
+      if (productSearchInput) productSearchInput.value = '';
+      if (topSortSelect) topSortSelect.value = 'featured';
+      if (topPriceSelect) topPriceSelect.value = 'all';
+
+      const container = document.querySelector('.price-range-container');
+      if (container && container.setRangeValues) {
+        container.setRangeValues(0, 1000000);
+      }
+
+      applyFilters();
+    }
+
+    // Attach event listeners for instant filtering
+    brandCheckboxes.forEach(cb => {
+      cb.addEventListener('change', applyFilters);
+    });
+
+    colorCheckboxes.forEach(cb => {
+      cb.addEventListener('change', applyFilters);
+    });
+
+    if (brandSearchInput) {
+      brandSearchInput.addEventListener('input', function() {
+        const term = this.value.toLowerCase();
+        document.querySelectorAll('.filter-widget .brand-item').forEach(item => {
+          const label = item.textContent.toLowerCase();
+          item.style.display = label.includes(term) ? '' : 'none';
+        });
+      });
+    }
+
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const cat = this.dataset.cat;
+        if (activeCategory === cat) {
+          activeCategory = 'all';
+          this.classList.remove('text-primary', 'fw-bold');
+        } else {
+          categoryLinks.forEach(l => l.classList.remove('text-primary', 'fw-bold'));
+          activeCategory = cat;
+          this.classList.add('text-primary', 'fw-bold');
+        }
+        applyFilters();
+      });
+    });
+
+    if (topPriceSelect) {
+      topPriceSelect.addEventListener('change', function() {
+        const val = this.value;
+        const container = document.querySelector('.price-range-container');
+        if (!container || !container.setRangeValues) return;
+
+        if (val === 'all') {
+          container.setRangeValues(0, 1000000);
+        } else if (val === '0-50000') {
+          container.setRangeValues(0, 50000);
+        } else if (val === '50000-100000') {
+          container.setRangeValues(50000, 100000);
+        } else if (val === '100000-150000') {
+          container.setRangeValues(100000, 150000);
+        } else if (val === '150000-up') {
+          container.setRangeValues(150000, 1000000);
+        }
+        applyFilters();
+      });
+    }
+
+    if (topSortSelect) {
+      topSortSelect.addEventListener('change', applyFilters);
+    }
+
+    if (productSearchInput) {
+      productSearchInput.addEventListener('input', applyFilters);
+    }
+
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', applyFilters);
+    }
+
+    if (clearFiltersBtn) {
+      clearFiltersBtn.addEventListener('click', resetAllFilters);
+    }
+
+    if (resetAllBtn) {
+      resetAllBtn.addEventListener('click', resetAllFilters);
+    }
+
+    if (emptyResetBtn) {
+      emptyResetBtn.addEventListener('click', resetAllFilters);
+    }
+
+    if (clearBrandBtn) {
+      clearBrandBtn.addEventListener('click', function() {
+        brandCheckboxes.forEach(cb => { cb.checked = false; });
+        applyFilters();
+      });
+    }
+
+    if (clearColorBtn) {
+      clearColorBtn.addEventListener('click', function() {
+        colorCheckboxes.forEach(cb => { cb.checked = false; });
+        applyFilters();
+      });
+    }
+
+    window.ShopWiseFilter = {
+      applyFilters,
+      resetAllFilters
+    };
+
+    // Initial run
+    applyFilters();
+  }
+
+  // Initialize category filter
+  initCategoryFilter();
 
   /**
    * Initiate glightbox
