@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Beranda - ShopWise Template Bootstrap</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ShopWise
+  * Template URL: https://bootstrapmade.com/shopwise-bootstrap-ecommerce-template/
+  * Updated: Apr 08 2026 with Bootstrap v5.3.8
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header position-relative">
+
+    <!-- Top Utility Bar -->
+    <div class="utility-bar">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <div class="utility-links">
+              <a href="store-locator.html" class="utility-link">
+                <i class="bi bi-pin-map"></i>
+                <span>Temukan Toko</span>
+              </a>
+              <span class="utility-divider"></span>
+              <a href="help.html" class="utility-link">
+                <i class="bi bi-headset"></i>
+                <span>Dukungan</span>
+              </a>
+            </div>
+          </div>
+          <div class="col text-end">
+            <span class="promo-text">Gratis ongkir untuk pembelian di atas Rp 750.000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-bar">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center gy-2">
+
+          <!-- Logo -->
+          <div class="col-auto">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <!-- <img src="assets/img/logo.webp" alt=""> -->
+              <i class="bi bi-cart2"></i>
+              <h1 class="sitename">ShopWise</h1>
+            </a>
+          </div>
+
+          <!-- Search -->
+          <div class="col d-none d-lg-block">
+            <form class="search-bar">
+              <i class="bi bi-search search-icon"></i>
+              <input type="text" class="search-field" placeholder="Cari produk, merek, dan lainnya...">
+              <button class="search-submit" type="submit">Cari</button>
+            </form>
+          </div>
+
+          <!-- Actions -->
+          <div class="col-auto ms-auto ms-lg-0">
+            <div class="action-group d-flex align-items-center">
+
+              <!-- Mobile Search Toggle -->
+              <button class="action-btn mobile-search-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+                <i class="bi bi-search"></i>
+              </button>
+
+              <!-- Account -->
+              <div class="dropdown">
+                <button class="action-btn" data-bs-toggle="dropdown" aria-label="Akun">
+                  <i class="bi bi-person-circle"></i>
+                </button>
+                <div class="dropdown-menu account-flyout">
+                  <div class="flyout-header">
+                    <h6>Selamat Datang Kembali</h6>
+                    <p>Masuk untuk pengalaman yang lebih personal</p>
+                  </div>
+                  <div class="flyout-actions">
+                    <a href="login.html" class="btn btn-primary-action">Masuk</a>
+                    <a href="register.html" class="btn btn-outline-action">Daftar</a>
+                  </div>
+                  <div class="flyout-links">
+                    <a href="orders.html">
+                      <i class="bi bi-receipt"></i>
+                      <span>Riwayat Pesanan</span>
+                    </a>
+                    <a href="wishlist.html">
+                      <i class="bi bi-bookmark-heart"></i>
+                      <span>Favorit</span>
+                    </a>
+                    <a href="returns.html">
+                      <i class="bi bi-arrow-counterclockwise"></i>
+                      <span>Retur &amp; Penukaran</span>
+                    </a>
+                    <a href="help.html">
+                      <i class="bi bi-life-preserver"></i>
+                      <span>Pusat Bantuan</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Wishlist -->
+              <a href="account.html" class="action-btn d-none d-md-flex" aria-label="Favorit">
+                <i class="bi bi-heart"></i>
+                <span class="badge-count">4</span>
+              </a>
+
+              <!-- Cart -->
+              <div class="dropdown">
+                <button class="action-btn" data-bs-toggle="dropdown" aria-label="Keranjang">
+                  <i class="bi bi-bag"></i>
+                  <span class="badge-count">3</span>
+                </button>
+                <div class="dropdown-menu cart-flyout">
+                  <div class="flyout-top">
+                    <h6>Keranjang Anda</h6>
+                    <span class="items-label">3 item</span>
+                  </div>
+                  <div class="flyout-items">
+                    <!-- Cart Item 1 -->
+                    <div class="flyout-item">
+                      <div class="flyout-item-thumb">
+                        <img src="assets/img/product/product-5.webp" alt="Tas Jinjing Anyam" class="img-fluid">
+                      </div>
+                      <div class="flyout-item-details">
+                        <h6>Tas Jinjing Anyam</h6>
+                        <span class="item-option">Krem / Sedang</span>
+                        <div class="item-bottom">
+                          <span class="item-price">Rp 89.000</span>
+                          <span class="item-qty">x1</span>
+                        </div>
+                      </div>
+                      <button class="item-dismiss" aria-label="Hapus item">
+                        <i class="bi bi-trash3"></i>
+                      </button>
+                    </div><!-- End Cart Item -->
+
+                    <!-- Cart Item 2 -->
+                    <div class="flyout-item">
+                      <div class="flyout-item-thumb">
+                        <img src="assets/img/product/product-8.webp" alt="Jaket Denim Slim Fit" class="img-fluid">
+                      </div>
+                      <div class="flyout-item-details">
+                        <h6>Jaket Denim Slim Fit</h6>
+                        <span class="item-option">Nila / L</span>
+                        <div class="item-bottom">
+                          <span class="item-price">Rp 145.000</span>
+                          <span class="item-qty">x1</span>
+                        </div>
+                      </div>
+                      <button class="item-dismiss" aria-label="Hapus item">
+                        <i class="bi bi-trash3"></i>
+                      </button>
+                    </div><!-- End Cart Item -->
+
+                    <!-- Cart Item 3 -->
+                    <div class="flyout-item">
+                      <div class="flyout-item-thumb">
+                        <img src="assets/img/product/product-11.webp" alt="Sneakers Kanvas Rendah" class="img-fluid">
+                      </div>
+                      <div class="flyout-item-details">
+                        <h6>Sneakers Kanvas Rendah</h6>
+                        <span class="item-option">Putih Tulang / 40</span>
+                        <div class="item-bottom">
+                          <span class="item-price">Rp 68.000</span>
+                          <span class="item-qty">x1</span>
+                        </div>
+                      </div>
+                      <button class="item-dismiss" aria-label="Hapus item">
+                        <i class="bi bi-trash3"></i>
+                      </button>
+                    </div><!-- End Cart Item -->
+                  </div>
+                  <div class="flyout-bottom">
+                    <div class="subtotal-row">
+                      <span>Subtotal</span>
+                      <span class="subtotal-value">Rp 302.000</span>
+                    </div>
+                    <a href="checkout.html" class="btn btn-proceed">Lanjut ke Checkout</a>
+                    <a href="cart.html" class="link-viewbag">Lihat semua keranjang →</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile Navigation Toggle -->
+              <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-strip">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">Beranda</a></li>
+            <li><a href="about.html">Tentang</a></li>
+            <li><a href="category.html">Kategori</a></li>
+            <li><a href="product-details.html">Detail Produk</a></li>
+            <li><a href="cart.html">Keranjang</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li>
+
+            <!-- Products Mega Menu 1 -->
+            <li class="products-megamenu-1"><a href="#"><span>Megamenu 1</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+              <!-- Products Mega Menu 1 Mobile View -->
+              <ul class="mobile-megamenu">
+
+                <li><a href="#">Produk Unggulan</a></li>
+                <li><a href="#">Produk Terbaru</a></li>
+                <li><a href="#">Produk Diskon</a></li>
+
+                <li class="dropdown"><a href="#"><span>Pakaian</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Pakaian Pria</a></li>
+                    <li><a href="#">Pakaian Wanita</a></li>
+                    <li><a href="#">Koleksi Anak</a></li>
+                    <li><a href="#">Pakaian Olahraga</a></li>
+                    <li><a href="#">Aksesori</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Elektronik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Smartphone</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Perangkat Audio</a></li>
+                    <li><a href="#">Rumah Pintar</a></li>
+                    <li><a href="#">Aksesori</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Rumah &amp; Gaya Hidup</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Furnitur</a></li>
+                    <li><a href="#">Dekorasi</a></li>
+                    <li><a href="#">Dapur</a></li>
+                    <li><a href="#">Perlengkapan Tidur</a></li>
+                    <li><a href="#">Pencahayaan</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Kecantikan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Perawatan Kulit</a></li>
+                    <li><a href="#">Riasan</a></li>
+                    <li><a href="#">Perawatan Rambut</a></li>
+                    <li><a href="#">Parfum</a></li>
+                    <li><a href="#">Perawatan Diri</a></li>
+                  </ul>
+                </li>
+
+              </ul><!-- End Products Mega Menu 1 Mobile View -->
+
+              <!-- Products Mega Menu 1 Desktop View -->
+              <div class="desktop-megamenu">
+
+                <div class="megamenu-tabs">
+                  <ul class="nav nav-tabs" id="productMegaMenuTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="featured-tab" data-bs-toggle="tab" data-bs-target="#featured-content-1862" type="button" aria-selected="true" role="tab">Unggulan</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="new-tab" data-bs-toggle="tab" data-bs-target="#new-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">Produk Terbaru</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="sale-tab" data-bs-toggle="tab" data-bs-target="#sale-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">Diskon</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="category-tab" data-bs-toggle="tab" data-bs-target="#category-content-1862" type="button" aria-selected="false" tabindex="-1" role="tab">Kategori</button>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="megamenu-content tab-content">
+
+                  <!-- Featured Tab -->
+                  <div class="tab-pane fade show active" id="featured-content-1862" role="tabpanel" aria-labelledby="featured-tab">
+                    <div class="product-grid">
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-1.webp" alt="Produk Unggulan" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Premium Headphones</h5>
+                          <p class="price">Rp 129.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-2.webp" alt="Produk Unggulan" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Smart Watch</h5>
+                          <p class="price">Rp 199.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-3.webp" alt="Produk Unggulan" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Wireless Earbuds</h5>
+                          <p class="price">Rp 89.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-4.webp" alt="Produk Unggulan" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                          <h5>Bluetooth Speaker</h5>
+                          <p class="price">Rp 79.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- New Arrivals Tab -->
+                  <div class="tab-pane fade" id="new-content-1862" role="tabpanel" aria-labelledby="new-tab">
+                    <div class="product-grid">
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-5.webp" alt="Produk Baru" loading="lazy">
+                          <span class="badge-new">Baru</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>Fitness Tracker</h5>
+                          <p class="price">Rp 69.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-6.webp" alt="Produk Baru" loading="lazy">
+                          <span class="badge-new">Baru</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>Wireless Charger</h5>
+                          <p class="price">Rp 39.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-7.webp" alt="Produk Baru" loading="lazy">
+                          <span class="badge-new">Baru</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>Smart Bulb Set</h5>
+                          <p class="price">Rp 49.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-8.webp" alt="Produk Baru" loading="lazy">
+                          <span class="badge-new">Baru</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>Portable Power Bank</h5>
+                          <p class="price">Rp 59.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sale Tab -->
+                  <div class="tab-pane fade" id="sale-content-1862" role="tabpanel" aria-labelledby="sale-tab">
+                    <div class="product-grid">
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-9.webp" alt="Produk Diskon" loading="lazy">
+                          <span class="badge-sale">-30%</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>Wireless Keyboard</h5>
+                          <p class="price"><span class="original-price">Rp 89.900</span> Rp 62.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-10.webp" alt="Produk Diskon" loading="lazy">
+                          <span class="badge-sale">-25%</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>Gaming Mouse</h5>
+                          <p class="price"><span class="original-price">Rp 59.900</span> Rp 44.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-11.webp" alt="Produk Diskon" loading="lazy">
+                          <span class="badge-sale">-40%</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>Desk Lamp</h5>
+                          <p class="price"><span class="original-price">Rp 49.900</span> Rp 29.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                      <div class="product-card">
+                        <div class="product-image">
+                          <img src="assets/img/product/product-12.webp" alt="Produk Diskon" loading="lazy">
+                          <span class="badge-sale">-20%</span>
+                        </div>
+                        <div class="product-info">
+                          <h5>USB-C Hub</h5>
+                          <p class="price"><span class="original-price">Rp 39.900</span> Rp 31.900</p>
+                          <a href="#" class="btn-view">Lihat Produk</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Categories Tab -->
+                  <div class="tab-pane fade" id="category-content-1862" role="tabpanel" aria-labelledby="category-tab">
+                    <div class="category-grid">
+                      <div class="category-column">
+                        <h4>Pakaian</h4>
+                        <ul>
+                          <li><a href="#">Pakaian Pria</a></li>
+                          <li><a href="#">Pakaian Wanita</a></li>
+                          <li><a href="#">Koleksi Anak</a></li>
+                          <li><a href="#">Pakaian Olahraga</a></li>
+                          <li><a href="#">Aksesori</a></li>
+                        </ul>
+                      </div>
+                      <div class="category-column">
+                        <h4>Elektronik</h4>
+                        <ul>
+                          <li><a href="#">Smartphone</a></li>
+                          <li><a href="#">Laptop</a></li>
+                          <li><a href="#">Perangkat Audio</a></li>
+                          <li><a href="#">Rumah Pintar</a></li>
+                          <li><a href="#">Aksesori</a></li>
+                        </ul>
+                      </div>
+                      <div class="category-column">
+                        <h4>Rumah &amp; Gaya Hidup</h4>
+                        <ul>
+                          <li><a href="#">Furnitur</a></li>
+                          <li><a href="#">Dekorasi</a></li>
+                          <li><a href="#">Dapur</a></li>
+                          <li><a href="#">Perlengkapan Tidur</a></li>
+                          <li><a href="#">Pencahayaan</a></li>
+                        </ul>
+                      </div>
+                      <div class="category-column">
+                        <h4>Kecantikan</h4>
+                        <ul>
+                          <li><a href="#">Perawatan Kulit</a></li>
+                          <li><a href="#">Riasan</a></li>
+                          <li><a href="#">Perawatan Rambut</a></li>
+                          <li><a href="#">Parfum</a></li>
+                          <li><a href="#">Perawatan Diri</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div><!-- End Products Mega Menu 1 Desktop View -->
+
+            </li><!-- End Products Mega Menu 1 -->
+            <!-- Products Mega Menu 2 -->
+            <li class="products-megamenu-2"><a href="#"><span>Megamenu 2</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+
+              <!-- Products Mega Menu 2 Mobile View -->
+              <ul class="mobile-megamenu">
+
+                <li><a href="#">Wanita</a></li>
+                <li><a href="#">Pria</a></li>
+                <li><a href="#">Anak-anak</a></li>
+
+                <li class="dropdown"><a href="#"><span>Pakaian</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Kemeja &amp; Atasan</a></li>
+                    <li><a href="#">Mantel &amp; Luaran</a></li>
+                    <li><a href="#">Pakaian Dalam</a></li>
+                    <li><a href="#">Sweatshirt</a></li>
+                    <li><a href="#">Gaun</a></li>
+                    <li><a href="#">Pakaian Renang</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Sepatu</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Sepatu Bot</a></li>
+                    <li><a href="#">Sandal</a></li>
+                    <li><a href="#">Hak Tinggi</a></li>
+                    <li><a href="#">Loafer</a></li>
+                    <li><a href="#">Selop</a></li>
+                    <li><a href="#">Oxford</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Aksesori</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Tas Tangan</a></li>
+                    <li><a href="#">Kacamata</a></li>
+                    <li><a href="#">Topi</a></li>
+                    <li><a href="#">Jam Tangan</a></li>
+                    <li><a href="#">Perhiasan</a></li>
+                    <li><a href="#">Ikat Pinggang</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown"><a href="#"><span>Ukuran Khusus</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Ukuran Plus</a></li>
+                    <li><a href="#">Petite</a></li>
+                    <li><a href="#">Sepatu Lebar</a></li>
+                    <li><a href="#">Sepatu Ramping</a></li>
+                  </ul>
+                </li>
+
+              </ul><!-- End Products Mega Menu 2 Mobile View -->
+
+              <!-- Products Mega Menu 2 Desktop View -->
+              <div class="desktop-megamenu">
+
+                <div class="megamenu-tabs">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="womens-tab" data-bs-toggle="tab" data-bs-target="#womens-content-1883" type="button" aria-selected="true" role="tab">WANITA</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="mens-tab" data-bs-toggle="tab" data-bs-target="#mens-content-1883" type="button" aria-selected="false" tabindex="-1" role="tab">PRIA</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="kids-tab" data-bs-toggle="tab" data-bs-target="#kids-content-1883" type="button" aria-selected="false" tabindex="-1" role="tab">ANAK</button>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="megamenu-content tab-content">
+
+                  <!-- Women Tab -->
+                  <div class="tab-pane fade show active" id="womens-content-1883" role="tabpanel" aria-labelledby="womens-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>Pakaian</h4>
+                          <h4>Sepatu</h4>
+                          <h4>Aksesori</h4>
+                          <h4>Ukuran Khusus</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">Kemeja &amp; Atasan</a>
+                            <a href="#">Sepatu Bot</a>
+                            <a href="#">Tas Tangan</a>
+                            <a href="#">Ukuran Plus</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Mantel &amp; Luaran</a>
+                            <a href="#">Sandal</a>
+                            <a href="#">Kacamata</a>
+                            <a href="#">Petite</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Pakaian Dalam</a>
+                            <a href="#">Hak Tinggi</a>
+                            <a href="#">Topi</a>
+                            <a href="#">Sepatu Lebar</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Sweatshirt</a>
+                            <a href="#">Loafer</a>
+                            <a href="#">Jam Tangan</a>
+                            <a href="#">Sepatu Ramping</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Gaun</a>
+                            <a href="#">Selop</a>
+                            <a href="#">Perhiasan</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Pakaian Renang</a>
+                            <a href="#">Oxford</a>
+                            <a href="#">Ikat Pinggang</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Lihat semua</a>
+                            <a href="#">Lihat semua</a>
+                            <a href="#">Lihat semua</a>
+                            <a href="#"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="featured-section">
+                        <div class="featured-image">
+                          <img src="assets/img/product/product-f-1.webp" alt="Koleksi Sepatu Hak Wanita">
+                          <div class="featured-content">
+                            <h3>Koleksi<br>Tas<br>Wanita</h3>
+                            <a href="#" class="btn-shop">Belanja sekarang</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Men Tab -->
+                  <div class="tab-pane fade" id="mens-content-1883" role="tabpanel" aria-labelledby="mens-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>Pakaian</h4>
+                          <h4>Sepatu</h4>
+                          <h4>Aksesori</h4>
+                          <h4>Ukuran Khusus</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">Kemeja &amp; Polo</a>
+                            <a href="#">Sneakers</a>
+                            <a href="#">Jam Tangan</a>
+                            <a href="#">Besar &amp; Tinggi</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Jaket &amp; Mantel</a>
+                            <a href="#">Sepatu Bot</a>
+                            <a href="#">Ikat Pinggang</a>
+                            <a href="#">Slim Fit</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Pakaian Dalam</a>
+                            <a href="#">Loafer</a>
+                            <a href="#">Dasi</a>
+                            <a href="#">Sepatu Lebar</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Hoodie</a>
+                            <a href="#">Sepatu Formal</a>
+                            <a href="#">Dompet</a>
+                            <a href="#">Ukuran Ekstra</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Jas</a>
+                            <a href="#">Sandal</a>
+                            <a href="#">Kacamata Hitam</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Pakaian Olahraga</a>
+                            <a href="#">Selop</a>
+                            <a href="#">Topi</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Lihat semua</a>
+                            <a href="#">Lihat semua</a>
+                            <a href="#">Lihat semua</a>
+                            <a href="#"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="featured-section">
+                        <div class="featured-image">
+                          <img src="assets/img/product/product-m-4.webp" alt="Koleksi Alas Kaki Pria">
+                          <div class="featured-content">
+                            <h3>Koleksi<br>Alas Kaki<br>Pria</h3>
+                            <a href="#" class="btn-shop">Belanja sekarang</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Kids Tab -->
+                  <div class="tab-pane fade" id="kids-content-1883" role="tabpanel" aria-labelledby="kids-tab">
+                    <div class="category-layout">
+                      <div class="categories-section">
+                        <div class="category-headers">
+                          <h4>Pakaian</h4>
+                          <h4>Sepatu</h4>
+                          <h4>Aksesori</h4>
+                          <h4>Berdasarkan Usia</h4>
+                        </div>
+
+                        <div class="category-links">
+                          <div class="link-row">
+                            <a href="#">Kaos &amp; Atasan</a>
+                            <a href="#">Sneakers</a>
+                            <a href="#">Ransel</a>
+                            <a href="#">Bayi (0-24 bulan)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Pakaian Luar</a>
+                            <a href="#">Sepatu Bot</a>
+                            <a href="#">Topi</a>
+                            <a href="#">Balita (2-4 tahun)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Piyama</a>
+                            <a href="#">Sandal</a>
+                            <a href="#">Kaos Kaki</a>
+                            <a href="#">Anak-anak (4-7 tahun)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Sweatshirt</a>
+                            <a href="#">Selop</a>
+                            <a href="#">Sarung Tangan</a>
+                            <a href="#">Remaja (8-14 tahun)</a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Gaun</a>
+                            <a href="#">Sepatu Sekolah</a>
+                            <a href="#">Syal</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Pakaian Renang</a>
+                            <a href="#">Sepatu Olahraga</a>
+                            <a href="#">Aksesori Rambut</a>
+                            <a href="#"></a>
+                          </div>
+                          <div class="link-row">
+                            <a href="#">Lihat semua</a>
+                            <a href="#">Lihat semua</a>
+                            <a href="#">Lihat semua</a>
+                            <a href="#"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="featured-section">
+                        <div class="featured-image">
+                          <img src="assets/img/product/product-9.webp" alt="Produk Baru Anak">
+                          <div class="featured-content">
+                            <h3>Produk Baru<br>Anak</h3>
+                            <a href="#" class="btn-shop">Belanja sekarang</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div><!-- End Products Mega Menu 2 Desktop View -->
+
+            </li><!-- End Products Mega Menu 2 -->
+
+            <li><a href="contact.html">Kontak</a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container-fluid container-xl">
+        <form class="mobile-search">
+          <div class="mobile-search-inner">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control" placeholder="Apa yang Anda cari?">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <div class="container">
+
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <div class="intro-content">
+              <span class="badge-label">Pilihan Terkurasi</span>
+              <h1 class="headline">Temukan Definisi Gaya Hidup Modern</h1>
+              <p class="subtext">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque, auctor sit amet aliquam vel.</p>
+              <div class="action-group">
+                <a href="category.html" class="btn-primary-action">Jelajahi Produk</a>
+                <a href="category.html" class="btn-ghost-action"><i class="bi bi-arrow-right me-2"></i>Lihat Semua Kategori</a>
+              </div>
+              <div class="trust-indicators">
+                <div class="indicator">
+                  <i class="bi bi-truck"></i>
+                  <span>Gratis Ongkir</span>
+                </div>
+                <div class="indicator">
+                  <i class="bi bi-shield-check"></i>
+                  <span>Kualitas Terjamin</span>
+                </div>
+                <div class="indicator">
+                  <i class="bi bi-arrow-return-left"></i>
+                  <span>Retur Mudah</span>
+                </div>
+                <div class="indicator">
+                  <i class="bi bi-chat-dots"></i>
+                  <span>Dukungan 24/7</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="product-tile" data-href="product-details.html?id=hub-audio-presisi">
+                  <div class="tile-image">
+                    <a href="product-details.html?id=hub-audio-presisi">
+                      <img src="assets/img/product/product-6.webp" class="img-fluid" alt="Hub Audio Presisi">
+                    </a>
+                    <span class="tile-badge">Terlaris</span>
+                  </div>
+                  <div class="tile-info">
+                    <h4><a href="product-details.html?id=hub-audio-presisi">Hub Audio Presisi</a></h4>
+                    <div class="tile-price">
+                      <span class="current">Rp 219.000</span>
+                      <span class="original">Rp 299.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Product Tile -->
+              </div>
+              <div class="col-md-6">
+                <div class="product-tile featured" data-href="product-details.html?id=jam-tangan-pintar-pro">
+                  <div class="tile-image">
+                    <a href="product-details.html?id=jam-tangan-pintar-pro">
+                      <img src="assets/img/product/product-3.webp" class="img-fluid" alt="Jam Tangan Pintar Pro">
+                    </a>
+                    <span class="tile-badge accent">Sedang Trending</span>
+                  </div>
+                  <div class="tile-info">
+                    <h4><a href="product-details.html?id=jam-tangan-pintar-pro">Jam Tangan Pintar Pro</a></h4>
+                    <div class="tile-price">
+                      <span class="current">Rp 159.000</span>
+                      <span class="original">Rp 229.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Product Tile -->
+              </div>
+              <div class="col-12">
+                <div class="product-tile horizontal" data-href="product-details.html?id=kamera-pendamping-harian">
+                  <div class="row g-0 align-items-center">
+                    <div class="col-sm-4">
+                      <div class="tile-image">
+                        <a href="product-details.html?id=kamera-pendamping-harian">
+                          <img src="assets/img/product/product-10.webp" class="img-fluid" alt="Kamera Pendamping Harian">
+                        </a>
+                        <span class="tile-badge">Baru Diluncurkan</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="tile-info">
+                        <h4><a href="product-details.html?id=kamera-pendamping-harian">Kamera Pendamping Harian</a></h4>
+                        <p class="tile-desc">Desain ringkas dan tangguh dengan fitur canggih untuk mengabadikan setiap momen terbaik Anda.</p>
+                        <div class="tile-price">
+                          <span class="current">Rp 99.000</span>
+                          <span class="original">Rp 149.000</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- End Product Tile -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-section">
+
+          <div class="product-carousel swiper init-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 500,
+                "autoplay": {
+                  "delay": 4000,
+                  "disableOnInteraction": true
+                },
+                "slidesPerView": 1,
+                "spaceBetween": 16,
+                "breakpoints": {
+                  "576": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 16
+                  },
+                  "768": {
+                    "slidesPerView": 3,
+                    "spaceBetween": 16
+                  },
+                  "1200": {
+                    "slidesPerView": 4,
+                    "spaceBetween": 24
+                  }
+                },
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "navigation": {
+                  "nextEl": ".swiper-button-next",
+                  "prevEl": ".swiper-button-prev"
+                }
+              }
+            </script>
+            <div class="swiper-wrapper" id="swiper-wrapper-0f8681ceaf4722b7" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-660px, 0px, 0px); transition-delay: 0ms;">
+
+              <div class="swiper-slide" style="width: 306px; margin-right: 24px;" role="group" aria-label="2 / 6" data-swiper-slide-index="1">
+                <div class="slide-card" data-href="product-details.html?id=lampu-meja-ergonomis">
+                  <div class="slide-card-image">
+                    <a href="product-details.html?id=lampu-meja-ergonomis">
+                      <img src="assets/img/product/product-5.webp" class="img-fluid" loading="lazy" alt="Lampu Meja Ergonomis">
+                    </a>
+                    <span class="slide-badge accent">Populer</span>
+                  </div>
+                  <div class="slide-card-body">
+                    <h4><a href="product-details.html?id=lampu-meja-ergonomis">Lampu Meja Ergonomis</a></h4>
+                    <p>Pencahayaan ramah mata dan hemat energi untuk produktivitas maksimal.</p>
+                    <div class="slide-card-price">
+                      <span class="price-now">Rp 64.000</span>
+                      <span class="price-was">Rp 85.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Slide Card -->
+              </div>
+              <div class="swiper-slide swiper-slide-prev" style="width: 306px; margin-right: 24px;" role="group" aria-label="3 / 6" data-swiper-slide-index="2">
+                <div class="slide-card" data-href="product-details.html?id=diffuser-aroma-keramik">
+                  <div class="slide-card-image">
+                    <a href="product-details.html?id=diffuser-aroma-keramik">
+                      <img src="assets/img/product/product-8.webp" class="img-fluid" loading="lazy" alt="Diffuser Aroma Keramik">
+                    </a>
+                  </div>
+                  <div class="slide-card-body">
+                    <h4><a href="product-details.html?id=diffuser-aroma-keramik">Diffuser Aroma Keramik</a></h4>
+                    <p>Menyebarkan aroma relaksasi alami untuk kenyamanan ruangan Anda.</p>
+                    <div class="slide-card-price">
+                      <span class="price-now">Rp 42.000</span>
+                      <span class="price-was">Rp 58.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Slide Card -->
+              </div>
+              <div class="swiper-slide swiper-slide-active" style="width: 306px; margin-right: 24px;" role="group" aria-label="4 / 6" data-swiper-slide-index="3">
+                <div class="slide-card" data-href="product-details.html?id=jam-dinding-minimalis">
+                  <div class="slide-card-image">
+                    <a href="product-details.html?id=jam-dinding-minimalis">
+                      <img src="assets/img/product/product-2.webp" class="img-fluid" loading="lazy" alt="Jam Dinding Minimalis">
+                    </a>
+                    <span class="slide-badge">Diskon</span>
+                  </div>
+                  <div class="slide-card-body">
+                    <h4><a href="product-details.html?id=jam-dinding-minimalis">Jam Dinding Minimalis</a></h4>
+                    <p>Sentuhan estetika modern dan elegan untuk mempercantik dinding rumah.</p>
+                    <div class="slide-card-price">
+                      <span class="price-now">Rp 37.000</span>
+                      <span class="price-was">Rp 55.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Slide Card -->
+              </div>
+              <div class="swiper-slide swiper-slide-next" style="width: 306px; margin-right: 24px;" role="group" aria-label="5 / 6" data-swiper-slide-index="4">
+                <div class="slide-card" data-href="product-details.html?id=bantalan-pengisi-daya-nirkabel">
+                  <div class="slide-card-image">
+                    <a href="product-details.html?id=bantalan-pengisi-daya-nirkabel">
+                      <img src="assets/img/product/product-9.webp" class="img-fluid" loading="lazy" alt="Bantalan Pengisi Daya Nirkabel">
+                    </a>
+                    <span class="slide-badge accent">Terpanas</span>
+                  </div>
+                  <div class="slide-card-body">
+                    <h4><a href="product-details.html?id=bantalan-pengisi-daya-nirkabel">Bantalan Pengisi Daya Nirkabel</a></h4>
+                    <p>Pengisian daya cepat tanpa kabel kusut untuk ponsel pintar Anda.</p>
+                    <div class="slide-card-price">
+                      <span class="price-now">Rp 29.000</span>
+                      <span class="price-was">Rp 45.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Slide Card -->
+              </div>
+              <div class="swiper-slide" style="width: 306px; margin-right: 24px;" role="group" aria-label="6 / 6" data-swiper-slide-index="5">
+                <div class="slide-card" data-href="product-details.html?id=stasiun-daya-portabel">
+                  <div class="slide-card-image">
+                    <a href="product-details.html?id=stasiun-daya-portabel">
+                      <img src="assets/img/product/product-4.webp" class="img-fluid" loading="lazy" alt="Stasiun Daya Portabel">
+                    </a>
+                  </div>
+                  <div class="slide-card-body">
+                    <h4><a href="product-details.html?id=stasiun-daya-portabel">Stasiun Daya Portabel</a></h4>
+                    <p>Kapasitas daya besar dan andal untuk aktivitas luar ruangan maupun darurat.</p>
+                    <div class="slide-card-price">
+                      <span class="price-now">Rp 175.000</span>
+                      <span class="price-was">Rp 240.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Slide Card -->
+              </div>
+              <div class="swiper-slide" style="width: 306px; margin-right: 24px;" role="group" aria-label="1 / 6" data-swiper-slide-index="0">
+                <div class="slide-card" data-href="product-details.html?id=ransel-teknologi-urban">
+                  <div class="slide-card-image">
+                    <a href="product-details.html?id=ransel-teknologi-urban">
+                      <img src="assets/img/product/product-1.webp" class="img-fluid" loading="lazy" alt="Ransel Teknologi Urban">
+                    </a>
+                    <span class="slide-badge">Baru</span>
+                  </div>
+                  <div class="slide-card-body">
+                    <h4><a href="product-details.html?id=ransel-teknologi-urban">Ransel Teknologi Urban</a></h4>
+                    <p>Kompartemen cerdas tahan cuaca yang ideal bagi para profesional modern.</p>
+                    <div class="slide-card-price">
+                      <span class="price-now">Rp 89.000</span>
+                      <span class="price-was">Rp 120.000</span>
+                    </div>
+                  </div>
+                </div><!-- End Slide Card -->
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Ke slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Ke slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Ke slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Ke slide 4" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Ke slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Ke slide 6"></span></div>
+            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Slide sebelumnya" aria-controls="swiper-wrapper-0f8681ceaf4722b7"></div>
+            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Slide berikutnya" aria-controls="swiper-wrapper-0f8681ceaf4722b7"></div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Promo Cards Section -->
+    <section id="promo-cards" class="promo-cards section">
+
+      <div class="container">
+
+        <div class="row g-4 align-items-stretch mb-5">
+          <div class="col-lg-7">
+            <div class="highlight-card">
+              <img src="assets/img/product/product-showcase-2.webp" alt="Winter Lookbook" class="img-fluid">
+            </div>
+          </div>
+          <div class="col-lg-5 d-flex">
+            <div class="highlight-info">
+              <span class="tag-label">Musim Baru</span>
+              <h2>Lookbook Musim Dingin</h2>
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae ultricies eget.</p>
+              <ul class="feature-list">
+                <li><i class="bi bi-check-circle"></i> Pilihan musiman terkurasi</li>
+                <li><i class="bi bi-check-circle"></i> Tersedia eksklusif secara online</li>
+                <li><i class="bi bi-check-circle"></i> Termasuk gratis ongkir</li>
+              </ul>
+              <a href="category.html" class="btn-primary-action">Jelajahi Koleksi <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div><!-- End Highlight Banner -->
+
+        <div class="row g-3">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card" data-href="category.html">
+              <div class="card-img-wrapper">
+                <a href="category.html">
+                  <img src="assets/img/product/product-m-8.webp" alt="Mode Pria Modern" loading="lazy" class="img-fluid">
+                </a>
+              </div>
+              <div class="card-body">
+                <h4><a href="category.html">Mode Pria Modern</a></h4>
+                <span class="count-label">245 produk</span>
+              </div>
+              <div class="card-action">
+                <a href="category.html">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Category Card -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card" data-href="category.html">
+              <div class="card-img-wrapper">
+                <a href="category.html">
+                  <img src="assets/img/product/product-f-12.webp" alt="Kebutuhan Sehari-hari" loading="lazy" class="img-fluid">
+                </a>
+              </div>
+              <div class="card-body">
+                <h4><a href="category.html">Kebutuhan Sehari-hari</a></h4>
+                <span class="count-label">189 produk</span>
+              </div>
+              <div class="card-action">
+                <a href="category.html">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Category Card -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card" data-href="category.html">
+              <div class="card-img-wrapper">
+                <a href="category.html">
+                  <img src="assets/img/product/product-f-3.webp" alt="Ritual Kecantikan" loading="lazy" class="img-fluid">
+                </a>
+              </div>
+              <div class="card-body">
+                <h4><a href="category.html">Ritual Kecantikan</a></h4>
+                <span class="count-label">112 produk</span>
+              </div>
+              <div class="card-action">
+                <a href="category.html">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Category Card -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="category-card" data-href="category.html">
+              <div class="card-img-wrapper">
+                <a href="category.html">
+                  <img src="assets/img/product/product-m-11.webp" alt="Perlengkapan Perjalanan" loading="lazy" class="img-fluid">
+                </a>
+              </div>
+              <div class="card-body">
+                <h4><a href="category.html">Perlengkapan Perjalanan</a></h4>
+                <span class="count-label">327 produk</span>
+              </div>
+              <div class="card-action">
+                <a href="category.html">Lihat Semua <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Category Card -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Promo Cards Section -->
+
+    <!-- Best Sellers Section -->
+    <section id="best-sellers" class="best-sellers section">
+
+      <!-- Section Title -->
+      <div class="container section-title">
+        <h2>Produk Terlaris</h2>
+        <p>Temukan produk terpopuler pilihan pelanggan dengan kualitas terbaik dan harga istimewa</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row g-4">
+
+          <!-- Product 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=sendal-slip-on">
+              <div class="product-media">
+                <a href="product-details.html?id=sendal-slip-on">
+                  <img src="assets/img/product/product-5.webp" alt="Sendal Slip-on" class="img-fluid" loading="lazy">
+                </a>
+                <div class="badge-label">Edisi Terbatas</div>
+                <div class="action-overlay">
+                  <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                  <button class="action-btn" aria-label="Lihat cepat"><i class="bi bi-eye"></i></button>
+                </div>
+              </div>
+              <div class="product-body">
+                <div class="product-meta">
+                  <span class="category-tag">Koleksi Premium</span>
+                  <div class="rating-group">
+                    <i class="bi bi-star-fill"></i>
+                    <span>4.2</span>
+                    <span class="count">(24)</span>
+                  </div>
+                </div>
+                <h4 class="product-title"><a href="product-details.html?id=sendal-slip-on">Sendal Slip-on</a></h4>
+                <div class="color-options">
+                  <span class="color-swatch active" style="background-color: #3b82f6;"></span>
+                  <span class="color-swatch" style="background-color: #14b8a6;"></span>
+                  <span class="color-swatch" style="background-color: #f43f5e;"></span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">Rp 149.000</div>
+                  <a href="#" class="cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 1 -->
+
+          <!-- Product 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=sepatu-canvas">
+              <div class="product-media">
+                <a href="product-details.html?id=sepatu-canvas">
+                  <img src="assets/img/product/product-8.webp" alt="Sepatu Canvas" class="img-fluid" loading="lazy">
+                </a>
+                <div class="badge-label discount">Diskon 25%</div>
+                <div class="action-overlay">
+                  <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                  <button class="action-btn" aria-label="Lihat cepat"><i class="bi bi-eye"></i></button>
+                </div>
+              </div>
+              <div class="product-body">
+                <div class="product-meta">
+                  <span class="category-tag">Terlaris</span>
+                  <div class="rating-group">
+                    <i class="bi bi-star-fill"></i>
+                    <span>4.7</span>
+                    <span class="count">(58)</span>
+                  </div>
+                </div>
+                <h4 class="product-title"><a href="product-details.html?id=sepatu-canvas">Sepatu Canvas</a></h4>
+                <div class="color-options">
+                  <span class="color-swatch active" style="background-color: #1e293b;"></span>
+                  <span class="color-swatch" style="background-color: #eab308;"></span>
+                  <span class="color-swatch" style="background-color: #a855f7;"></span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">
+                    <span class="original">Rp 220.000</span>
+                    <span class="current">Rp 165.000</span>
+                  </div>
+                  <a href="#" class="cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 2 -->
+
+          <!-- Product 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=sepatu-sneakers">
+              <div class="product-media">
+                <a href="product-details.html?id=sepatu-sneakers">
+                  <img src="assets/img/product/product-11.webp" alt="Sepatu Sneakers" class="img-fluid" loading="lazy">
+                </a>
+                <div class="action-overlay">
+                  <button class="action-btn active" aria-label="Hapus dari favorit"><i class="bi bi-heart-fill"></i></button>
+                  <button class="action-btn" aria-label="Lihat cepat"><i class="bi bi-eye"></i></button>
+                </div>
+              </div>
+              <div class="product-body">
+                <div class="product-meta">
+                  <span class="category-tag">Produk Terbaru</span>
+                  <div class="rating-group">
+                    <i class="bi bi-star-fill"></i>
+                    <span>3.8</span>
+                    <span class="count">(12)</span>
+                  </div>
+                </div>
+                <h4 class="product-title"><a href="product-details.html?id=sepatu-sneakers">Sepatu Sneakers</a></h4>
+                <div class="color-options">
+                  <span class="color-swatch active" style="background-color: #ef4444;"></span>
+                  <span class="color-swatch" style="background-color: #0ea5e9;"></span>
+                  <span class="color-swatch" style="background-color: #22c55e;"></span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">Rp 89.000</div>
+                  <a href="#" class="cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 3 -->
+
+          <!-- Product 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=kursi-klasik">
+              <div class="product-media">
+                <a href="product-details.html?id=kursi-klasik">
+                  <img src="assets/img/product/product-2.webp" alt="Kursi Klasik" class="img-fluid" loading="lazy">
+                </a>
+                <div class="badge-label trending">Trending</div>
+                <div class="action-overlay">
+                  <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                  <button class="action-btn" aria-label="Lihat cepat"><i class="bi bi-eye"></i></button>
+                </div>
+              </div>
+              <div class="product-body">
+                <div class="product-meta">
+                  <span class="category-tag">Pilihan Editor</span>
+                  <div class="rating-group">
+                    <i class="bi bi-star-fill"></i>
+                    <span>4.9</span>
+                    <span class="count">(71)</span>
+                  </div>
+                </div>
+                <h4 class="product-title"><a href="product-details.html?id=kursi-klasik">Kursi Klasik</a></h4>
+                <div class="color-options">
+                  <span class="color-swatch" style="background-color: #64748b;"></span>
+                  <span class="color-swatch active" style="background-color: #7c3aed;"></span>
+                  <span class="color-swatch" style="background-color: #f97316;"></span>
+                </div>
+                <div class="product-footer">
+                  <div class="product-price">Rp 199.000</div>
+                  <a href="#" class="cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Product 4 -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Best Sellers Section -->
+
+    <!-- Cards Section -->
+    <section id="cards" class="cards section">
+
+      <div class="container">
+
+        <div class="tab-nav-wrapper">
+          <ul class="nav nav-tabs filter-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cards-tab-1" type="button" role="tab">
+                <i class="bi bi-fire"></i> Sedang Trending
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cards-tab-2" type="button" role="tab">
+                <i class="bi bi-award"></i> Rating Tertinggi
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cards-tab-3" type="button" role="tab">
+                <i class="bi bi-bookmark-star"></i> Pilihan Khusus
+              </button>
+            </li>
+          </ul>
+        </div><!-- End Filter Tabs -->
+
+        <div class="tab-content">
+
+          <!-- Trending Now Tab -->
+          <div class="tab-pane fade show active" id="cards-tab-1" role="tabpanel">
+            <div class="row g-3">
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=tas-jinjing-buatan-tangan">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=tas-jinjing-buatan-tangan">
+                      <img src="assets/img/product/product-1.webp" alt="Tas Jinjing Buatan Tangan" class="img-fluid">
+                    </a>
+                    <span class="status-badge new-badge">Baru</span>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat cepat"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.5</span>
+                        <span class="rating-count">(31)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=tas-jinjing-buatan-tangan">Tas Jinjing Buatan Tangan</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 92.000</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=kacamata-hitam-cokelat">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=kacamata-hitam-cokelat">
+                      <img src="assets/img/product/product-3.webp" alt="Kacamata Hitam Cokelat" class="img-fluid">
+                    </a>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat cepat"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">5.0</span>
+                        <span class="rating-count">(53)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=kacamata-hitam-cokelat">Kacamata Hitam Cokelat</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 44.500</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=sendal-slip-on-trending">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=sendal-slip-on-trending">
+                      <img src="assets/img/product/product-5.webp" alt="Sendal Slip-On" class="img-fluid">
+                    </a>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.0</span>
+                        <span class="rating-count">(22)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=sendal-slip-on-trending">Sendal Slip-On</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 49.000</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=baju-polo-biru-navy">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=baju-polo-biru-navy">
+                      <img src="assets/img/product/product-10.webp" alt="Baju Polo Biru Navy" class="img-fluid">
+                    </a>
+                    <span class="status-badge sale-badge">-15%</span>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.7</span>
+                        <span class="rating-count">(45)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=baju-polo-biru-navy">Baju Polo Biru Navy</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 68.000</span>
+                      <span class="original-price">Rp 80.000</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+            </div>
+          </div><!-- End Trending Now Tab -->
+
+          <!-- Highest Rated Tab -->
+          <div class="tab-pane fade" id="cards-tab-2" role="tabpanel">
+            <div class="row g-3">
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=celana-denim-pas-badan">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=celana-denim-pas-badan">
+                      <img src="assets/img/product/product-2.webp" alt="Celana Denim Pas Badan" class="img-fluid">
+                    </a>
+                    <span class="status-badge sale-badge">-20%</span>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">5.0</span>
+                        <span class="rating-count">(93)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=celana-denim-pas-badan">Celana Denim Pas Badan</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 64.000</span>
+                      <span class="original-price">Rp 80.000</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=tas-pesta-rantai-berbantalan">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=tas-pesta-rantai-berbantalan">
+                      <img src="assets/img/product/product-6.webp" alt="Tas Pesta Rantai Berbantalan" class="img-fluid">
+                    </a>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.5</span>
+                        <span class="rating-count">(68)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=tas-pesta-rantai-berbantalan">Tas Pesta Rantai Berbantalan</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 134.900</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=ransel-harian-urban">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=ransel-harian-urban">
+                      <img src="assets/img/product/product-8.webp" alt="Ransel Harian Urban" class="img-fluid">
+                    </a>
+                    <span class="status-badge hot-badge">Terpanas</span>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">5.0</span>
+                        <span class="rating-count">(119)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=ransel-harian-urban">Ransel Harian Urban</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 99.500</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=tas-pinggang-heritage">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=tas-pinggang-heritage">
+                      <img src="assets/img/product/product-3.webp" alt="Tas Pinggang Heritage" class="img-fluid">
+                    </a>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.8</span>
+                        <span class="rating-count">(77)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=tas-pinggang-heritage">Tas Pinggang Heritage</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 76.000</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+            </div>
+          </div><!-- End Highest Rated Tab -->
+
+          <!-- Hand-Picked Tab -->
+          <div class="tab-pane fade" id="cards-tab-3" role="tabpanel">
+            <div class="row g-3">
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=gaun-lilit-lipit">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=gaun-lilit-lipit">
+                      <img src="assets/img/product/product-7.webp" alt="Gaun Lilit Lipit" class="img-fluid">
+                    </a>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.0</span>
+                        <span class="rating-count">(38)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=gaun-lilit-lipit">Gaun Lilit Lipit</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 79.000</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=sepasang-anting-geometris">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=sepasang-anting-geometris">
+                      <img src="assets/img/product/product-4.webp" alt="Sepasang Anting Geometris" class="img-fluid">
+                    </a>
+                    <span class="status-badge exclusive-badge">Terbatas</span>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.5</span>
+                        <span class="rating-count">(51)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=sepasang-anting-geometris">Sepasang Anting Geometris</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 47.900</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=tas-jinjing-gesper-vintage">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=tas-jinjing-gesper-vintage">
+                      <img src="assets/img/product/product-9.webp" alt="Tas Jinjing Gesper Vintage" class="img-fluid">
+                    </a>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">5.0</span>
+                        <span class="rating-count">(72)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=tas-jinjing-gesper-vintage">Tas Jinjing Gesper Vintage</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 94.900</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="product-card" data-href="product-details.html?id=dompet-kanvas-minimalis">
+                  <div class="product-thumb">
+                    <a href="product-details.html?id=dompet-kanvas-minimalis">
+                      <img src="assets/img/product/product-12.webp" alt="Dompet Kanvas Minimalis" class="img-fluid">
+                    </a>
+                    <span class="status-badge new-badge">Baru</span>
+                    <div class="overlay-actions">
+                      <button class="action-btn" aria-label="Tambah ke favorit"><i class="bi bi-heart"></i></button>
+                      <button class="action-btn" aria-label="Lihat sekilas"><i class="bi bi-eye"></i></button>
+                      <button class="action-btn cart-btn" aria-label="Tambah ke keranjang"><i class="bi bi-bag-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-meta">
+                      <div class="rating">
+                        <i class="bi bi-star-fill"></i>
+                        <span class="rating-value">4.3</span>
+                        <span class="rating-count">(29)</span>
+                      </div>
+                    </div>
+                    <h4 class="product-title"><a href="product-details.html?id=dompet-kanvas-minimalis">Dompet Kanvas Minimalis</a></h4>
+                    <div class="product-price">
+                      <span class="current-price">Rp 32.000</span>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Product Card -->
+            </div>
+          </div><!-- End Hand-Picked Tab -->
+
+        </div><!-- End Tab Content -->
+
+      </div>
+
+    </section><!-- /Cards Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container">
+
+        <div class="promo-banner">
+          <div class="row align-items-center gy-3">
+            <div class="col-lg-5">
+              <div class="banner-content">
+                <span class="sale-badge"><i class="bi bi-lightning-charge-fill"></i> Flash Sale — Diskon hingga 60%</span>
+                <h2>Penawaran Eksklusif Khusus untuk Anda</h2>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Jangan lewatkan penghematan waktu terbatas ini.</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="timer-block">
+                <span class="timer-heading"><i class="bi bi-hourglass-split"></i> Berakhir Dalam:</span>
+                <div class="countdown d-flex" data-count="2026/12/31">
+                  <div>
+                    <h3 class="count-days"></h3>
+                    <h4>Hari</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-hours"></h3>
+                    <h4>Jam</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-minutes"></h3>
+                    <h4>Menit</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-seconds"></h3>
+                    <h4>Detik</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="banner-actions">
+                <a href="category.html" class="btn-primary-deal">Ambil Penawaran <i class="bi bi-arrow-right"></i></a>
+                <a href="category.html" class="btn-secondary-deal">Lihat Semua Produk</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gy-4 mt-2">
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=tas-ransel-kulit">
+              <div class="product-image">
+                <a href="product-details.html?id=tas-ransel-kulit">
+                  <img src="assets/img/product/product-6.webp" alt="Tas Ransel Kulit" class="img-fluid">
+                </a>
+                <span class="discount-label">-45%</span>
+              </div>
+              <div class="product-body">
+                <div class="star-rating">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="review-count">(312)</span>
+                </div>
+                <h6 class="product-title"><a href="product-details.html?id=tas-ransel-kulit">Tas Ransel Kulit</a></h6>
+                <div class="price-row">
+                  <span class="original-price">Rp 179.000</span>
+                  <span class="sale-price">Rp 98.000</span>
+                </div>
+              </div>
+              <div class="product-footer">
+                <a href="#" class="cart-btn"><i class="bi bi-bag-plus"></i> Tambah ke Keranjang</a>
+              </div>
+            </div>
+          </div><!-- End Product Card -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=sepatu-lari-pria">
+              <div class="product-image">
+                <a href="product-details.html?id=sepatu-lari-pria">
+                  <img src="assets/img/product/product-11.webp" alt="Sepatu Lari Pria" class="img-fluid">
+                </a>
+                <span class="discount-label">-50%</span>
+              </div>
+              <div class="product-body">
+                <div class="star-rating">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="review-count">(478)</span>
+                </div>
+                <h6 class="product-title"><a href="product-details.html?id=sepatu-lari-pria">Sepatu Lari Pria</a></h6>
+                <div class="price-row">
+                  <span class="original-price">Rp 120.000</span>
+                  <span class="sale-price">Rp 60.000</span>
+                </div>
+              </div>
+              <div class="product-footer">
+                <a href="#" class="cart-btn"><i class="bi bi-bag-plus"></i> Tambah ke Keranjang</a>
+              </div>
+            </div>
+          </div><!-- End Product Card -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=kursi-klasik-flash">
+              <div class="product-image">
+                <a href="product-details.html?id=kursi-klasik-flash">
+                  <img src="assets/img/product/product-2.webp" alt="Kursi Klasik" class="img-fluid">
+                </a>
+                <span class="discount-label">-35%</span>
+              </div>
+              <div class="product-body">
+                <div class="star-rating">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                  <span class="review-count">(189)</span>
+                </div>
+                <h6 class="product-title"><a href="product-details.html?id=kursi-klasik-flash">Kursi Klasik</a></h6>
+                <div class="price-row">
+                  <span class="original-price">Rp 210.000</span>
+                  <span class="sale-price">Rp 136.000</span>
+                </div>
+              </div>
+              <div class="product-footer">
+                <a href="#" class="cart-btn"><i class="bi bi-bag-plus"></i> Tambah ke Keranjang</a>
+              </div>
+            </div>
+          </div><!-- End Product Card -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="product-card" data-href="product-details.html?id=sendal-slip-on-flash">
+              <div class="product-image">
+                <a href="product-details.html?id=sendal-slip-on-flash">
+                  <img src="assets/img/product/product-5.webp" alt="Sendal Slip-on" class="img-fluid">
+                </a>
+                <span class="discount-label">-55%</span>
+              </div>
+              <div class="product-body">
+                <div class="star-rating">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="review-count">(245)</span>
+                </div>
+                <h6 class="product-title"><a href="product-details.html?id=sendal-slip-on-flash">Sendal Slip-on</a></h6>
+                <div class="price-row">
+                  <span class="original-price">Rp 95.000</span>
+                  <span class="sale-price">Rp 43.000</span>
+                </div>
+              </div>
+              <div class="product-footer">
+                <a href="#" class="cart-btn"><i class="bi bi-bag-plus"></i> Tambah ke Keranjang</a>
+              </div>
+            </div>
+          </div><!-- End Product Card -->
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2>Bergabung dengan Newsletter Kami</h2>
+            <p>Berlangganan untuk mendapatkan penawaran spesial, hadiah gratis, dan promo terbaik.</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form d-flex">
+                <input type="email" name="email" placeholder="Alamat email Anda" required="">
+                <button type="submit">Berlangganan</button>
+              </div>
+              <div class="loading">Memuat</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Permintaan berlangganan Anda telah terkirim. Terima kasih!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">ShopWise</span>
+              </a>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem.</p>
+              <div class="footer-contact mt-4">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>123 Fashion Street, New York, NY 10001</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>hello@example.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Belanja</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">Produk Terbaru</a></li>
+                <li><a href="category.html">Terlaris</a></li>
+                <li><a href="category.html">Pakaian Wanita</a></li>
+                <li><a href="category.html">Pakaian Pria</a></li>
+                <li><a href="category.html">Aksesori</a></li>
+                <li><a href="category.html">Diskon</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Dukungan</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">Pusat Bantuan</a></li>
+                <li><a href="account.html">Status Pesanan</a></li>
+                <li><a href="shiping-info.html">Info Pengiriman</a></li>
+                <li><a href="return-policy.html">Retur &amp; Penukaran</a></li>
+                <li><a href="#">Panduan Ukuran</a></li>
+                <li><a href="contact.html">Hubungi Kami</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Perusahaan</h4>
+              <ul class="footer-links">
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="about.html">Karier</a></li>
+                <li><a href="about.html">Press</a></li>
+                <li><a href="about.html">Afiliasi</a></li>
+                <li><a href="about.html">Tanggung Jawab</a></li>
+                <li><a href="about.html">Investor</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Unduh Aplikasi Kami</h4>
+              <p>Belanja kapan saja dengan aplikasi mobile kami</p>
+              <div class="app-buttons">
+                <a href="#" class="app-btn">
+                  <i class="bi bi-apple"></i>
+                  <span>App Store</span>
+                </a>
+                <a href="#" class="app-btn">
+                  <i class="bi bi-google-play"></i>
+                  <span>Google Play</span>
+                </a>
+              </div>
+              <div class="social-links mt-4">
+                <h5>Ikuti Kami</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                  <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <div class="payment-methods d-flex align-items-center justify-content-center">
+          <span>Kami Menerima:</span>
+          <div class="payment-icons">
+            <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+            <i class="bi bi-paypal" aria-label="PayPal"></i>
+            <i class="bi bi-apple" aria-label="Apple Pay"></i>
+            <i class="bi bi-google" aria-label="Google Pay"></i>
+            <i class="bi bi-shop" aria-label="Shop Pay"></i>
+            <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+          </div>
+        </div>
+
+        <div class="legal-links">
+          <a href="tos.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="tos.html">Cookies Settings</a>
+        </div>
+
+        <div class="copyright text-center">
+          <p>© <span>Hak Cipta</span> <strong class="sitename">ShopWise</strong>. Seluruh Hak Dilindungi.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/drift-zoom/Drift.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Product Card Click Navigation Handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.addEventListener('click', function(e) {
+        if (e.target.closest('button, .action-btn, .cart-btn, .wishlist-toggle, input, select, .swiper-button-prev, .swiper-button-next, .swiper-pagination, a')) {
+          return;
+        }
+
+        const card = e.target.closest('.product-tile, .slide-card, .product-card, .category-card');
+        if (card) {
+          const targetUrl = card.getAttribute('data-href') || (card.querySelector('a[href]:not([href="#"]):not([href=""])') ? card.querySelector('a[href]:not([href="#"]):not([href=""])').getAttribute('href') : null);
+          if (targetUrl) {
+            window.location.href = targetUrl;
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
