@@ -8,87 +8,6 @@
 
   // Comprehensive Product Database for all items in index.html and catalog
   const PRODUCTS_CATALOG = {
-    'hub-audio-presisi': {
-      id: 'hub-audio-presisi',
-      title: 'Hub Audio Presisi',
-      category: 'Audio & Elektronik',
-      badge: 'Terlaris',
-      price: 219.00,
-      oldPrice: 299.00,
-      image: 'assets/img/product/product-6.webp',
-      thumbnails: [
-        'assets/img/product/product-6.webp',
-        'assets/img/product/product-1.webp',
-        'assets/img/product/product-3.webp',
-        'assets/img/product/product-4.webp',
-        'assets/img/product/product-10.webp'
-      ],
-      rating: 4.8,
-      reviewsCount: 210,
-      stock: 15,
-      description: 'Hub Audio Presisi menghadirkan performa audio resolusi tinggi dengan transmisi nirkabel tanpa latensi, material paduan aluminium premium, dan peredam bising aktif untuk kenyamanan mendengarkan sepanjang hari.',
-      specs: [
-        { label: 'Konektivitas', value: 'Bluetooth 5.3 & USB-C Audio' },
-        { label: 'Respons Frekuensi', value: '20 Hz – 40.000 Hz' },
-        { label: 'Daya Tahan Baterai', value: 'Hingga 36 Jam Pemakaian' },
-        { label: 'Material', value: 'Anodized Aluminum & Memory Foam' },
-        { label: 'Garansi', value: '2 Tahun Resmi Distributor' }
-      ]
-    },
-    'jam-tangan-pintar-pro': {
-      id: 'jam-tangan-pintar-pro',
-      title: 'Jam Tangan Pintar Pro',
-      category: 'Smartwatch & Aksesori',
-      badge: 'Sedang Trending',
-      price: 159.00,
-      oldPrice: 229.00,
-      image: 'assets/img/product/product-3.webp',
-      thumbnails: [
-        'assets/img/product/product-3.webp',
-        'assets/img/product/product-9.webp',
-        'assets/img/product/product-4.webp',
-        'assets/img/product/product-11.webp',
-        'assets/img/product/product-6.webp'
-      ],
-      rating: 4.7,
-      reviewsCount: 185,
-      stock: 22,
-      description: 'Jam Tangan Pintar Pro dengan layar retina AMOLED tajam, pelacakan kebugaran dan detak jantung real-time, GPS presisi tinggi, dan daya tahan air 5ATM untuk mendukung gaya hidup aktif Anda.',
-      specs: [
-        { label: 'Layar', value: '1.43" AMOLED Always-on Display' },
-        { label: 'Sensor Kesehatan', value: 'Detak Jantung, SpO2, Kualitas Tidur' },
-        { label: 'Ketahanan Air', value: '5 ATM (hingga 50 meter)' },
-        { label: 'Kapasitas Baterai', value: 'Hingga 14 Hari Pemakaian Normal' },
-        { label: 'Konektivitas', value: 'Bluetooth 5.2, GPS Terintegrasi' }
-      ]
-    },
-    'kamera-pendamping-harian': {
-      id: 'kamera-pendamping-harian',
-      title: 'Kamera Pendamping Harian',
-      category: 'Kamera & Fotografi',
-      badge: 'Baru Diluncurkan',
-      price: 99.00,
-      oldPrice: 149.00,
-      image: 'assets/img/product/product-10.webp',
-      thumbnails: [
-        'assets/img/product/product-10.webp',
-        'assets/img/product/product-3.webp',
-        'assets/img/product/product-6.webp',
-        'assets/img/product/product-4.webp',
-        'assets/img/product/product-9.webp'
-      ],
-      rating: 4.6,
-      reviewsCount: 94,
-      stock: 12,
-      description: 'Desain ringkas dan tangguh dengan fitur canggih untuk mengabadikan setiap momen terbaik Anda. Dilengkapi sensor sensitivitas tinggi dan lensa sudut lebar untuk foto dan video 4K jernih.',
-      specs: [
-        { label: 'Resolusi Sensor', value: '24 Megapiksel 4K Ultra HD' },
-        { label: 'Lensa', value: 'Wide Angle f/2.0 Glass Lens' },
-        { label: 'Stabilisasi Gambar', value: 'Optical Image Stabilization (OIS)' },
-        { label: 'Penyimpanan', value: 'Slot MicroSD hingga 256GB' },
-        { label: 'Konektivitas', value: 'Wi-Fi & Bluetooth Instant Share' }
-      ]
-    },
     'lampu-meja-ergonomis': {
       id: 'lampu-meja-ergonomis',
       title: 'Lampu Meja Ergonomis',
@@ -377,7 +296,7 @@
     },
     'kacamata-hitam-cokelat': {
       id: 'kacamata-hitam-cokelat',
-      title: 'Kacamata Hitam Cokelat',
+      title: 'Kacamata Hitam Coklat',
       category: 'Aksesori Fashion',
       badge: 'Sedang Trending',
       price: 44.50,
@@ -751,6 +670,12 @@
       ]
     }
   };
+
+  // Aliases for compatibility & alternate slugs
+  PRODUCTS_CATALOG['kacamata-hitam-coklat'] = PRODUCTS_CATALOG['kacamata-hitam-cokelat'];
+  PRODUCTS_CATALOG['hub-audio-presisi'] = PRODUCTS_CATALOG['tas-pesta-rantai-berbantalan'];
+  PRODUCTS_CATALOG['jam-tangan-pintar-pro'] = PRODUCTS_CATALOG['kacamata-hitam-cokelat'];
+  PRODUCTS_CATALOG['kamera-pendamping-harian'] = PRODUCTS_CATALOG['baju-polo-biru-navy'];
 
   /**
    * Helper to format price to string in Rupiah
