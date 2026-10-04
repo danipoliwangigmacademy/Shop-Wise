@@ -13865,3 +13865,72 @@ section,
 .category-card .card-body h4 a:hover {
   color: var(--accent-color);
 }
+
+/* WhatsApp Direct Order Styling */
+:root {
+  --wa-brand-color: #25D366;
+  --wa-brand-hover: #1ebd5a;
+  --wa-brand-dark: #128C7E;
+}
+
+.whatsapp-order-btn,
+.product-details .product-detail-card .action-row .primary-action-btn.whatsapp-order-btn {
+  background: var(--wa-brand-color);
+  color: #ffffff !important;
+  border: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s ease;
+}
+
+.whatsapp-order-btn:hover,
+.product-details .product-detail-card .action-row .primary-action-btn.whatsapp-order-btn:hover {
+  background: var(--wa-brand-hover);
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-checkout-btn,
+.product-details .product-detail-card .checkout-now-btn.whatsapp-checkout-btn {
+  border-color: var(--wa-brand-color);
+  color: var(--wa-brand-dark);
+  background: rgba(37, 211, 102, 0.08);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.whatsapp-checkout-btn:hover,
+.product-details .product-detail-card .checkout-now-btn.whatsapp-checkout-btn:hover {
+  background: var(--wa-brand-color);
+  color: #ffffff !important;
+  border-color: var(--wa-brand-color);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+}
+
+.cart-btn:hover i.bi-whatsapp,
+.add-cart-btn:hover i.bi-whatsapp,
+.action-btn:hover i.bi-whatsapp {
+  color: var(--wa-brand-color);
+}
+
+.btn-primary.btn-sm.whatsapp-btn,
+button.btn-primary.btn-sm:has(.bi-whatsapp) {
+  background: var(--wa-brand-color) !important;
+  border-color: var(--wa-brand-color) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary.btn-sm.whatsapp-btn:hover,
+button.btn-primary.btn-sm:has(.bi-whatsapp):hover {
+  background: var(--wa-brand-hover) !important;
+  border-color: var(--wa-brand-hover) !important;
+}

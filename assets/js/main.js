@@ -834,4 +834,140 @@
     });
   });
 
+  /**
+   * Direct WhatsApp Order System
+   */
+  const WHATSAPP_PHONE = '62895639068080';
+
+  function formatWhatsAppUrl(message) {
+    return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+  }
+
+  function sendProductOrderViaWA(data) {
+    const title = data.title || 'Produk ShopWise';
+    const price = data.price ? data.price.trim() : '';
+    const variant = data.variant ? data.variant.trim() : '';
+    const qty = data.qty || 1;
+    const url = data.url || window.location.href;
+
+    let msg = `Halo Admin ShopWise, saya ingin memesan produk berikut:\n\n`;
+    msg += `📦 *Nama Produk:* ${title}\n`;
+    if (price) msg += `💰 *Harga Satuan:* ${price}\n`;
+    if (variant) msg += `🎨 *Pilihan Warna/Varian:* ${variant}\n`;
+    msg += `🔢 *Jumlah:* ${qty}\n`;
+    msg += `🔗 *Link Produk:* ${url}\n\n`;
+    msg += `Mohon info ketersediaan stok dan prosedur pembayarannya. Terima kasih!`;
+
+    window.open(formatWhatsAppUrl(msg), '_blank');
+  }
+
+  function sendProductInquiryViaWA(data) {
+    const title = data.title || 'Produk ShopWise';
+    const price = data.price ? data.price.trim() : '';
+    const url = data.url || window.location.href;
+
+    let msg = `Halo Admin ShopWise, saya ingin konsultasi mengenai produk:\n\n`;
+    msg += `📦 *Produk:* ${title}\n`;
+    if (price) msg += `💰 *Harga:* ${price}\n`;
+    msg += `🔗 *Link:* ${url}\n\n`;
+    msg += `Apakah produk ini masih tersedia dan bisa dikirim ke alamat saya? Terima kasih!`;
+
+    window.open(formatWhatsAppUrl(msg), '_blank');
+  }
+
+  // Variant color picker in Product Details page
+  document.querySelectorAll('.variant-picker .color-dots .dot').forEach(dot => {
+    dot.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = this.closest('.variant-picker');
+      if (parent) {
+        parent.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+        this.classList.add('active');
+        const chosenVariantEl = parent.querySelector('.chosen-variant');
+        const colorName = this.getAttribute('data-color') || '';
+        if (chosenVariantEl) {
+          chosenVariantEl.textContent = colorName;
+        }
+      }
+    });
+  });
+
+  // Attach WhatsApp Order click handlers
+  document.addEventListener('click', function(e) {
+    // 1. Detail Page Order Button
+    const detailOrderBtn = e.target.closest('#btnOrderWhatsapp, .whatsapp-order-btn, .primary-action-btn');
+    if (detailOrderBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const titleEl = document.querySelector('.product-heading') || document.querySelector('h1');
+      const priceEl = document.querySelector('.pricing-area .price-now') || document.querySelector('.product-price');
+      const variantEl = document.querySelector('.chosen-variant');
+      const qtyInput = document.querySelector('.quantity-input');
+
+      sendProductOrderViaWA({
+        title: titleEl ? titleEl.textContent.trim() : document.title,
+        price: priceEl ? priceEl.textContent.trim() : '',
+        variant: variantEl ? variantEl.textContent.trim() : '',
+        qty: qtyInput ? qtyInput.value : 1,
+        url: window.location.href
+      });
+      return;
+    }
+
+    // 2. Detail Page Consultation / Chat Button
+    const detailChatBtn = e.target.closest('#btnChatWhatsapp, .whatsapp-checkout-btn, .checkout-now-btn');
+    if (detailChatBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const titleEl = document.querySelector('.product-heading') || document.querySelector('h1');
+      const priceEl = document.querySelector('.pricing-area .price-now') || document.querySelector('.product-price');
+
+      sendProductInquiryViaWA({
+        title: titleEl ? titleEl.textContent.trim() : document.title,
+        price: priceEl ? priceEl.textContent.trim() : '',
+        url: window.location.href
+      });
+      return;
+    }
+
+    // 3. Product Cards Order Button (Catalog / Category / Search / Deals)
+    const cardOrderBtn = e.target.closest('.cart-btn, .add-cart-btn, [aria-label*="keranjang" i], [aria-label*="whatsapp" i]');
+    if (cardOrderBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const card = cardOrderBtn.closest('.product-card, .product-item, .product-tile, .slide-card, .deal-card, .search-card, tr, li');
+      let title = '';
+      let price = '';
+      let prodUrl = window.location.href;
+
+      if (card) {
+        // Find title
+        const titleEl = card.querySelector('.product-title a, .product-title, h4 a, h4, h3 a, h3, .item-title a, .item-title') || card.querySelector('[data-title]');
+        if (titleEl) {
+          title = titleEl.getAttribute('data-title') || titleEl.textContent.trim();
+          if (titleEl.hasAttribute('href') && titleEl.getAttribute('href') !== '#') {
+            prodUrl = new URL(titleEl.getAttribute('href'), window.location.href).href;
+          }
+        }
+
+        // Find price
+        const priceEl = card.querySelector('.price-current, .current, .price-now, .product-price, .item-price') || card.querySelector('[data-price]');
+        if (priceEl) {
+          price = priceEl.getAttribute('data-price') ? `Rp ${parseInt(priceEl.getAttribute('data-price')).toLocaleString('id-ID')}` : priceEl.textContent.trim();
+        }
+      }
+
+      sendProductOrderViaWA({
+        title: title || 'Produk ShopWise',
+        price: price || '',
+        qty: 1,
+        url: prodUrl
+      });
+      return;
+    }
+  });
+
 })();
