@@ -1722,6 +1722,16 @@ h6 {
   line-height: 1.5;
 }
 
+.footer .footer-main .footer-contact .contact-item span a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .footer-main .footer-contact .contact-item span a:hover {
+  color: var(--accent-color);
+}
+
 .footer .footer-main .footer-links {
   list-style: none;
   padding: 0;

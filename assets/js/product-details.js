@@ -772,6 +772,16 @@
     return '';
   }
 
+  function resolveAsset(path) {
+    if (!path) return '';
+    if (path.startsWith('http') || path.startsWith('/') || path.startsWith('../')) return path;
+    const loc = window.location.pathname || window.location.href;
+    if (loc.includes('detail-produk')) {
+      return '../' + path;
+    }
+    return path;
+  }
+
   /**
    * Populate product details page with product object
    */
@@ -801,8 +811,9 @@
     // 5. Main Product Image & Zoom
     const mainImg = document.getElementById('main-product-image');
     if (mainImg) {
-      mainImg.src = product.image;
-      mainImg.setAttribute('data-zoom', product.image);
+      const resolvedImg = resolveAsset(product.image);
+      mainImg.src = resolvedImg;
+      mainImg.setAttribute('data-zoom', resolvedImg);
       mainImg.alt = product.title;
     }
 
@@ -826,10 +837,11 @@
     if (thumbStrip && product.thumbnails && product.thumbnails.length) {
       thumbStrip.innerHTML = '';
       product.thumbnails.forEach((thumbSrc, idx) => {
+        const resolvedThumb = resolveAsset(thumbSrc);
         const thumbDiv = document.createElement('div');
         thumbDiv.className = 'thumb-cell thumbnail-item' + (idx === 0 ? ' active' : '');
-        thumbDiv.setAttribute('data-image', thumbSrc);
-        thumbDiv.innerHTML = `<img src="${thumbSrc}" alt="Tampilan ${idx + 1}" class="img-fluid">`;
+        thumbDiv.setAttribute('data-image', resolvedThumb);
+        thumbDiv.innerHTML = `<img src="${resolvedThumb}" alt="Tampilan ${idx + 1}" class="img-fluid">`;
         thumbStrip.appendChild(thumbDiv);
       });
     }
