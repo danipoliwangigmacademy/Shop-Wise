@@ -49,10 +49,11 @@
    * Init swiper sliders
    */
   function initSwiper() {
+    if (typeof Swiper === 'undefined') return;
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      const configEl = swiperElement.querySelector(".swiper-config");
+      if (!configEl) return;
+      let config = JSON.parse(configEl.innerHTML.trim());
 
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
@@ -154,17 +155,15 @@
   });
 
   /**
-   * Product Image Zoom and Thumbnail Functionality
+   * Product Image Zoom and Thumbnail Functionality (Hanya berjalan di halaman detail produk)
    */
-
   function productDetailFeatures() {
+    const mainImage = document.getElementById('main-product-image');
+    if (!mainImage) return;
+
     // Initialize Drift for image zoom
     function initDriftZoom() {
-      // Check if Drift is available
-      if (typeof Drift === 'undefined') {
-        console.error('Drift library is not loaded');
-        return;
-      }
+      if (typeof Drift === 'undefined') return;
 
       const driftOptions = {
         paneContainer: document.querySelector('.image-zoom-container'),
@@ -176,8 +175,6 @@
         handleTouch: false
       };
 
-      // Initialize Drift on the main product image
-      const mainImage = document.getElementById('main-product-image');
       if (mainImage) {
         new Drift(mainImage, driftOptions);
       }
@@ -186,24 +183,17 @@
     // Thumbnail click functionality
     function initThumbnailClick() {
       const thumbnails = document.querySelectorAll('.thumbnail-item');
-      const mainImage = document.getElementById('main-product-image');
-
       if (!thumbnails.length || !mainImage) return;
 
       thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
-          // Get image path from data attribute
           const imageSrc = this.getAttribute('data-image');
-
-          // Update main image src and zoom attribute
           mainImage.src = imageSrc;
           mainImage.setAttribute('data-zoom', imageSrc);
 
-          // Update active state
           thumbnails.forEach(item => item.classList.remove('active'));
           this.classList.add('active');
 
-          // Reinitialize Drift for the new image
           initDriftZoom();
         });
       });
@@ -219,31 +209,24 @@
       const thumbnails = Array.from(document.querySelectorAll('.thumbnail-item'));
       if (!thumbnails.length) return;
 
-      // Function to navigate to previous or next image
       function navigateImage(direction) {
-        // Find the currently active thumbnail
         const activeIndex = thumbnails.findIndex(thumb => thumb.classList.contains('active'));
         if (activeIndex === -1) return;
 
         let newIndex;
         if (direction === 'prev') {
-          // Go to previous image or loop to the last one
           newIndex = activeIndex === 0 ? thumbnails.length - 1 : activeIndex - 1;
         } else {
-          // Go to next image or loop to the first one
           newIndex = activeIndex === thumbnails.length - 1 ? 0 : activeIndex + 1;
         }
 
-        // Simulate click on the new thumbnail
         thumbnails[newIndex].click();
       }
 
-      // Add event listeners to navigation buttons
       prevButton.addEventListener('click', () => navigateImage('prev'));
       nextButton.addEventListener('click', () => navigateImage('next'));
     }
 
-    // Initialize all features
     initDriftZoom();
     initThumbnailClick();
     initImageNavigation();
@@ -252,47 +235,47 @@
   productDetailFeatures();
 
   /**
-   * Ecommerce Cart Functionality
-   * Handles quantity changes and item removal
+   * Product Quantity Selector
+   * Mengatur jumlah pesanan di halaman detail produk
    */
-
-  function ecommerceCartTools() {
-    // Get all quantity buttons and inputs directly
+  function initQuantitySelectors() {
     const decreaseButtons = document.querySelectorAll('.quantity-btn.decrease');
     const increaseButtons = document.querySelectorAll('.quantity-btn.increase');
     const quantityInputs = document.querySelectorAll('.quantity-input');
-    const removeButtons = document.querySelectorAll('.remove-item');
 
-    // Decrease quantity buttons
     decreaseButtons.forEach(btn => {
       btn.addEventListener('click', function() {
-        const quantityInput = btn.closest('.quantity-selector').querySelector('.quantity-input');
-        let currentValue = parseInt(quantityInput.value);
+        const selector = btn.closest('.quantity-selector');
+        if (!selector) return;
+        const quantityInput = selector.querySelector('.quantity-input');
+        if (!quantityInput) return;
+        let currentValue = parseInt(quantityInput.value) || 1;
         if (currentValue > 1) {
           quantityInput.value = currentValue - 1;
         }
       });
     });
 
-    // Increase quantity buttons
     increaseButtons.forEach(btn => {
       btn.addEventListener('click', function() {
-        const quantityInput = btn.closest('.quantity-selector').querySelector('.quantity-input');
-        let currentValue = parseInt(quantityInput.value);
-        if (currentValue < parseInt(quantityInput.getAttribute('max'))) {
+        const selector = btn.closest('.quantity-selector');
+        if (!selector) return;
+        const quantityInput = selector.querySelector('.quantity-input');
+        if (!quantityInput) return;
+        let currentValue = parseInt(quantityInput.value) || 1;
+        const maxVal = parseInt(quantityInput.getAttribute('max')) || 999;
+        if (currentValue < maxVal) {
           quantityInput.value = currentValue + 1;
         }
       });
     });
 
-    // Manual quantity inputs
     quantityInputs.forEach(input => {
       input.addEventListener('change', function() {
-        let currentValue = parseInt(input.value);
-        const min = parseInt(input.getAttribute('min'));
-        const max = parseInt(input.getAttribute('max'));
+        let currentValue = parseInt(input.value) || 1;
+        const min = parseInt(input.getAttribute('min')) || 1;
+        const max = parseInt(input.getAttribute('max')) || 999;
 
-        // Validate input
         if (isNaN(currentValue) || currentValue < min) {
           input.value = min;
         } else if (currentValue > max) {
@@ -300,16 +283,9 @@
         }
       });
     });
-
-    // Remove item buttons
-    removeButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        btn.closest('.cart-item').remove();
-      });
-    });
   }
 
-  ecommerceCartTools();
+  initQuantitySelectors();
 
   /**
    * Price range slider implementation for price filtering.
@@ -806,6 +782,13 @@
       resetAllFilters
     };
 
+    // Check if query param exists in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchVal = urlParams.get('search') || urlParams.get('q');
+    if (searchVal && productSearchInput) {
+      productSearchInput.value = searchVal;
+    }
+
     // Initial run
     applyFilters();
   }
@@ -814,16 +797,20 @@
   initCategoryFilter();
 
   /**
-   * Initiate glightbox
+   * Initiate glightbox (Hanya jika library termuat dan elemen ada)
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined' && document.querySelector('.glightbox')) {
+    GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
-   * Initiate Pure Counter
+   * Initiate Pure Counter (Hanya jika library termuat dan elemen ada)
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined' && document.querySelector('.purecounter')) {
+    new PureCounter();
+  }
 
   /**
    * Frequently Asked Questions Toggle
@@ -835,7 +822,11 @@
   });
 
   /**
-   * Direct WhatsApp Order System
+   * ==========================================
+   * PENGATURAN WHATSAPP & INTEGRASI PEMESANAN
+   * ==========================================
+   * Ganti nomor di bawah ini dengan nomor WhatsApp Admin Anda:
+   * Format: Nomor internasional tanpa tanda + atau spasi (contoh: 62895639068080)
    */
   const WHATSAPP_PHONE = '62895639068080';
 
@@ -944,16 +935,14 @@
       let prodUrl = window.location.href;
 
       if (card) {
-        // Find title
         const titleEl = card.querySelector('.product-title a, .product-title, h4 a, h4, h3 a, h3, .item-title a, .item-title') || card.querySelector('[data-title]');
         if (titleEl) {
           title = titleEl.getAttribute('data-title') || titleEl.textContent.trim();
-          if (titleEl.hasAttribute('href') && titleEl.getAttribute('href') !== '#') {
+          if (titleEl.hasAttribute('href') && titleEl.getAttribute('href') !== '#' && !titleEl.getAttribute('href').startsWith('javascript:')) {
             prodUrl = new URL(titleEl.getAttribute('href'), window.location.href).href;
           }
         }
 
-        // Find price
         const priceEl = card.querySelector('.price-current, .current, .price-now, .product-price, .item-price') || card.querySelector('[data-price]');
         if (priceEl) {
           price = priceEl.getAttribute('data-price') ? `Rp ${parseInt(priceEl.getAttribute('data-price')).toLocaleString('id-ID')}` : priceEl.textContent.trim();
@@ -968,6 +957,120 @@
       });
       return;
     }
+  });
+
+  /**
+   * ==========================================
+   * INTEGRASI FORM KONTAK VIA WHATSAPP
+   * ==========================================
+   */
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!this.checkValidity()) {
+        this.classList.add('was-validated');
+        return;
+      }
+
+      this.classList.add('was-validated');
+
+      const name = (this.querySelector('[name="name"]') || {}).value || '';
+      const email = (this.querySelector('[name="email"]') || {}).value || '';
+      const phone = (this.querySelector('[name="phone"]') || {}).value || '';
+      const subject = (this.querySelector('[name="subject"]') || {}).value || '';
+      const message = (this.querySelector('[name="message"]') || {}).value || '';
+
+      let text = `Halo Admin ShopWise, ada pesan baru melalui form kontak website:\n\n`;
+      text += `👤 *Nama:* ${name}\n`;
+      text += `📧 *Email:* ${email}\n`;
+      if (phone) text += `📱 *Telepon:* ${phone}\n`;
+      text += `📌 *Subjek:* ${subject}\n\n`;
+      text += `💬 *Pesan:*\n${message}\n\n`;
+      text += `Mohon responnya. Terima kasih!`;
+
+      window.open(formatWhatsAppUrl(text), '_blank');
+      this.reset();
+      this.classList.remove('was-validated');
+    });
+  }
+
+  /**
+   * ==========================================
+   * NEWSLETTER STATIS (FEEDBACK BOOTSTRAP TOAST)
+   * ==========================================
+   */
+  document.querySelectorAll('.newsletter-form-static').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = form.querySelector('input[type="email"]');
+      if (!emailInput || !emailInput.checkValidity()) {
+        if (emailInput) emailInput.reportValidity();
+        return;
+      }
+
+      let toastContainer = document.getElementById('shopwise-toast-container');
+      if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'shopwise-toast-container';
+        toastContainer.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+        toastContainer.style.zIndex = '9999';
+        document.body.appendChild(toastContainer);
+      }
+
+      const toastId = 'toast-' + Date.now();
+      const toastHtml = `
+        <div id="${toastId}" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">
+              <i class="bi bi-check-circle-fill me-2"></i> Terima kasih telah berlangganan newsletter ShopWise!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
+          </div>
+        </div>
+      `;
+      toastContainer.insertAdjacentHTML('beforeend', toastHtml);
+      const toastEl = document.getElementById(toastId);
+      if (typeof bootstrap !== 'undefined' && bootstrap.Toast) {
+        const bsToast = new bootstrap.Toast(toastEl, { delay: 4000 });
+        bsToast.show();
+      } else {
+        alert('Terima kasih telah berlangganan newsletter ShopWise!');
+      }
+
+      form.reset();
+    });
+  });
+
+  /**
+   * ==========================================
+   * GLOBAL SEARCH ROUTING (HEADER & MOBILE)
+   * ==========================================
+   */
+  document.querySelectorAll('form.search-bar, form.mobile-search').forEach(searchForm => {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = searchForm.querySelector('input[type="text"], input[name="search"], input[name="q"], .search-field');
+      const val = input ? input.value.trim() : '';
+      if (!val) return;
+
+      const isSubfolder = window.location.pathname.includes('/artikel/') || window.location.pathname.includes('/detail-produk/');
+      const targetCategory = isSubfolder ? '../category.html' : 'category.html';
+
+      const isCategoryPage = window.location.pathname.endsWith('category.html');
+      const catSearchInput = document.getElementById('productSearch');
+      if (isCategoryPage && catSearchInput) {
+        catSearchInput.value = val;
+        if (window.ShopWiseFilter && typeof window.ShopWiseFilter.applyFilters === 'function') {
+          window.ShopWiseFilter.applyFilters();
+        }
+        catSearchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        window.location.href = `${targetCategory}?search=${encodeURIComponent(val)}`;
+      }
+    });
   });
 
 })();

@@ -668,6 +668,162 @@
         { label: 'Bahan', value: 'High Elasticity EVA Foam' },
         { label: 'Keunggulan', value: 'Tahan Air, Anti Licin, Sangat Ringan' }
       ]
+    },
+    'sendal-slip-on-wanita': {
+      id: 'sendal-slip-on-wanita',
+      title: 'Sendal Slip-On Wanita',
+      category: 'Sepatu & Sandal',
+      badge: 'Populer',
+      price: 99.00,
+      oldPrice: 149.00,
+      image: 'assets/img/product/product-5.webp',
+      thumbnails: [
+        'assets/img/product/product-5.webp',
+        'assets/img/product/product-8.webp',
+        'assets/img/product/product-11.webp',
+        'assets/img/product/product-2.webp',
+        'assets/img/product/product-7.webp'
+      ],
+      rating: 4.8,
+      reviewsCount: 124,
+      stock: 35,
+      description: 'Sendal slip-on wanita model terbaru cocok untuk aktivitas sehari-hari. Desain ergonomis dengan bantalan telapak empuk berbahan EVA premium yang memberikan kenyamanan maksimal saat melangkah sepanjang hari.',
+      specs: [
+        { label: 'Material Upper', value: 'Kulit Sintetis Lembut Breathable' },
+        { label: 'Material Sol', value: 'Molded EVA Foam Anti-Slip' },
+        { label: 'Gaya', value: 'Casual Slip-on' },
+        { label: 'Ukuran Tersedia', value: '36, 37, 38, 39, 40' }
+      ]
+    },
+    'sepatu-canvas-pria-kasual': {
+      id: 'sepatu-canvas-pria-kasual',
+      title: 'Sepatu Canvas Pria Kasual',
+      category: 'Sepatu Pria',
+      badge: 'Terbaru',
+      price: 42.00,
+      oldPrice: 58.00,
+      image: 'assets/img/product/product-8.webp',
+      thumbnails: [
+        'assets/img/product/product-8.webp',
+        'assets/img/product/product-11.webp',
+        'assets/img/product/product-5.webp',
+        'assets/img/product/product-1.webp',
+        'assets/img/product/product-2.webp'
+      ],
+      rating: 4.7,
+      reviewsCount: 86,
+      stock: 28,
+      description: 'Sepatu model terbaru 2026 cocok untuk aktifitas anda. Dibuat dengan kanvas katun berkualitas tinggi dan sol karet vulkanisir yang fleksibel dan awet dipakai harian.',
+      specs: [
+        { label: 'Material Atas', value: 'Kanvas Katun 12oz Berkualitas' },
+        { label: 'Sol Bawah', value: 'Karet Vulkanisir Anti-Slip' },
+        { label: 'Insole', value: 'Cushioned Footbed Nyaman' },
+        { label: 'Ukuran Tersedia', value: '39, 40, 41, 42, 43, 44' }
+      ]
+    },
+    'kursi-klasik-ruang-tamu-modern': {
+      id: 'kursi-klasik-ruang-tamu-modern',
+      title: 'Kursi Klasik Ruang Tamu Modern',
+      category: 'Furnitur & Dekorasi',
+      badge: 'Diskon',
+      price: 37.00,
+      oldPrice: 55.00,
+      image: 'assets/img/product/product-2.webp',
+      thumbnails: [
+        'assets/img/product/product-2.webp',
+        'assets/img/product/product-5.webp',
+        'assets/img/product/product-8.webp',
+        'assets/img/product/product-4.webp',
+        'assets/img/product/product-6.webp'
+      ],
+      rating: 4.9,
+      reviewsCount: 95,
+      stock: 15,
+      description: 'Kursi tamu model terbaru dengan sentuhan estetika klasik dan modern. Rangka kokoh dengan bantalan empuk yang memberikan kenyamanan ekstra untuk ruang keluarga maupun ruang tamu.',
+      specs: [
+        { label: 'Rangka', value: 'Kayu Solid Berkualitas' },
+        { label: 'Pelapis', value: 'Kain Linen Beludru Halus' },
+        { label: 'Kapasitas Beban', value: 'Maksimal 150 kg' },
+        { label: 'Gaya', value: 'Modern Klasik' }
+      ]
+    },
+    'tas-pinggang-tactical': {
+      id: 'tas-pinggang-tactical',
+      title: 'Tas Pinggang Tactical',
+      category: 'Tas & Aksesori',
+      badge: 'Terpanas',
+      price: 59.00,
+      oldPrice: 95.00,
+      image: 'assets/img/product/product-9.webp',
+      thumbnails: [
+        'assets/img/product/product-9.webp',
+        'assets/img/product/product-11.webp',
+        'assets/img/product/product-1.webp',
+        'assets/img/product/product-6.webp',
+        'assets/img/product/product-4.webp'
+      ],
+      rating: 4.8,
+      reviewsCount: 142,
+      stock: 40,
+      description: 'Tas pinggang pria outdoor dan untuk keperluan sehari-hari. Dilengkapi banyak kompartemen taktis, material tahan air (water-resistant), dan tali gesper yang kokoh.',
+      specs: [
+        { label: 'Material', value: 'Cordura Nylon Tahan Air & Gesekan' },
+        { label: 'Kompartemen', value: '4 Saku Beritsleting Multifungsi' },
+        { label: 'Tali Pinggang', value: 'Dapat Disesuaikan (Adjustable Buckle)' },
+        { label: 'Fitur', value: 'MOLLE System & Port Headphone' }
+      ]
+    },
+    'hoodie-premium-pria': {
+      id: 'hoodie-premium-pria',
+      title: 'Hoodie Premium Pria',
+      category: 'Pakaian Pria',
+      badge: 'Terlaris',
+      price: 89.00,
+      oldPrice: 149.00,
+      image: 'assets/img/product/product-4.webp',
+      thumbnails: [
+        'assets/img/product/product-4.webp',
+        'assets/img/product/product-10.webp',
+        'assets/img/product/product-2.webp',
+        'assets/img/product/product-6.webp',
+        'assets/img/product/product-8.webp'
+      ],
+      rating: 4.8,
+      reviewsCount: 168,
+      stock: 22,
+      description: 'Hoodie premium pria cocok untuk aktivitas sehari-hari. Berbahan cotton fleece tebal yang hangat namun tetap sejuk dan lembut di kulit, dilengkapi tudung kepala bertali dan saku kangguru.',
+      specs: [
+        { label: 'Material', value: 'Cotton Fleece 330 Gsm Super Soft' },
+        { label: 'Model', value: 'Pullover Hoodie Casual' },
+        { label: 'Saku', value: 'Kangaroo Pocket di Bagian Depan' },
+        { label: 'Ukuran Tersedia', value: 'M, L, XL, XXL' }
+      ]
+    },
+    'tas-jinjing-wanita-premium': {
+      id: 'tas-jinjing-wanita-premium',
+      title: 'Tas Jinjing Wanita Premium',
+      category: 'Tas Wanita',
+      badge: 'Baru',
+      price: 99.00,
+      oldPrice: 149.00,
+      image: 'assets/img/product/product-1.webp',
+      thumbnails: [
+        'assets/img/product/product-1.webp',
+        'assets/img/product/product-6.webp',
+        'assets/img/product/product-9.webp',
+        'assets/img/product/product-12.webp',
+        'assets/img/product/product-8.webp'
+      ],
+      rating: 4.9,
+      reviewsCount: 110,
+      stock: 18,
+      description: 'Tas jinjing wanita model terbaru cocok untuk aktivitas sehari-hari. Desain modis dengan ruang kompartemen luas yang muat laptop dan perlengkapan harian dengan material kulit sintetis elegan.',
+      specs: [
+        { label: 'Material', value: 'Premium Faux Leather Tahan Gores' },
+        { label: 'Kapasitas', value: 'Muat Laptop 14 Inci & Dokumen A4' },
+        { label: 'Penutup', value: 'Ritsleting Logam Halus Anti Macet' },
+        { label: 'Tali', value: 'Tali Bahu Nyaman & Tali Jinjing' }
+      ]
     }
   };
 
@@ -676,6 +832,12 @@
   PRODUCTS_CATALOG['hub-audio-presisi'] = PRODUCTS_CATALOG['tas-pesta-rantai-berbantalan'];
   PRODUCTS_CATALOG['jam-tangan-pintar-pro'] = PRODUCTS_CATALOG['kacamata-hitam-cokelat'];
   PRODUCTS_CATALOG['kamera-pendamping-harian'] = PRODUCTS_CATALOG['baju-polo-biru-navy'];
+  PRODUCTS_CATALOG['lampu-meja-ergonomis'] = PRODUCTS_CATALOG['sendal-slip-on-wanita'];
+  PRODUCTS_CATALOG['diffuser-aroma-keramik'] = PRODUCTS_CATALOG['sepatu-canvas-pria-kasual'];
+  PRODUCTS_CATALOG['jam-dinding-minimalis'] = PRODUCTS_CATALOG['kursi-klasik-ruang-tamu-modern'];
+  PRODUCTS_CATALOG['bantalan-pengisi-daya-nirkabel'] = PRODUCTS_CATALOG['tas-pinggang-tactical'];
+  PRODUCTS_CATALOG['stasiun-daya-portabel'] = PRODUCTS_CATALOG['hoodie-premium-pria'];
+  PRODUCTS_CATALOG['ransel-teknologi-urban'] = PRODUCTS_CATALOG['tas-jinjing-wanita-premium'];
 
   /**
    * Helper to format price to string in Rupiah

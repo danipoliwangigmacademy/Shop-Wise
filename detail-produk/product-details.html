@@ -64,8 +64,8 @@
   </script>
 
   <!-- Favicons -->
-  <link href="../assets/img/logo-shopwise.webp" rel="icon">
-  <link href="../assets/img/logo-shopwise.webp" rel="apple-touch-icon">
+  <link rel="icon" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -75,9 +75,7 @@
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="../assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
@@ -427,7 +425,7 @@
 
             </li><!-- End Products Mega Menu 2 -->
 
-            <li><a href="../artikel/index.html">Artikel</a></li>
+            <li><a href="../artikel.html">Artikel</a></li>
             <li><a href="../contact.html">Kontak</a></li>
 
           </ul>
@@ -939,14 +937,11 @@
           <div class="col-lg-8 text-center">
             <h2>Bergabung dengan Newsletter Kami</h2>
             <p>Berlangganan untuk mendapatkan penawaran spesial, hadiah gratis, dan promo terbaik.</p>
-            <form action="../forms/newsletter.php" method="post" class="php-email-form">
+            <form class="newsletter-form-static">
               <div class="newsletter-form d-flex">
                 <input type="email" name="email" placeholder="Alamat email Anda" required="">
                 <button type="submit">Berlangganan</button>
               </div>
-              <div class="loading">Memuat</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Permintaan langganan Anda telah terkirim. Terima kasih!</div>
             </form>
           </div>
         </div>
@@ -994,11 +989,11 @@
               <h4>Bantuan</h4>
               <ul class="footer-links">
                 <li><a href="../support.html">Pusat Bantuan</a></li>
-                <li><a href="../account.html">Status Pesanan</a></li>
+                <li><a href="../contact.html">Hubungi Kami</a></li>
                 <li><a href="../shiping-info.html">Informasi Pengiriman</a></li>
                 <li><a href="../return-policy.html">Pengembalian &amp; Penukaran</a></li>
                 <li><a href="#">Panduan Ukuran</a></li>
-                <li><a href="../contact.html">Hubungi Kami</a></li>
+                <li><a href="../tos.html">Syarat &amp; Ketentuan</a></li>
               </ul>
             </div>
           </div>
@@ -1013,7 +1008,7 @@
                 <li><a href="../about.html">Afiliasi</a></li>
                 <li><a href="../about.html">Tanggung Jawab</a></li>
                 <li><a href="../about.html">Investor</a></li>
-                <li><a href="../artikel/index.html">Artikel</a></li>
+                <li><a href="../artikel.html">Artikel</a></li>
               </ul>
             </div>
           </div>
@@ -1071,18 +1066,14 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/drift-zoom/Drift.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/vendor/drift-zoom/Drift.min.js" defer></script>
 
   <!-- Product Details Loader JS File -->
-  <script src="../assets/js/product-details.js"></script>
+  <script src="../assets/js/product-details.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.js" defer></script>
 
 </body>
 
