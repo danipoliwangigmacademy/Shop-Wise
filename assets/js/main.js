@@ -194,6 +194,27 @@
           thumbnails.forEach(item => item.classList.remove('active'));
           this.classList.add('active');
 
+          // Sync with variant color dots if available
+          const thumbColor = this.getAttribute('data-color');
+          const colorDots = document.querySelectorAll('.variant-picker .color-dots .dot');
+          if (colorDots.length) {
+            colorDots.forEach(dot => {
+              const dotColor = dot.getAttribute('data-color') || '';
+              const dotImg = dot.getAttribute('data-image') || '';
+              const isMatch = (dotImg && dotImg === imageSrc) ||
+                              (thumbColor && dotColor.toLowerCase() === thumbColor.toLowerCase()) ||
+                              (dotColor && imageSrc.toLowerCase().includes(dotColor.toLowerCase()));
+              if (isMatch) {
+                colorDots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                const chosenVariantEl = document.querySelector('.variant-picker .chosen-variant');
+                if (chosenVariantEl) {
+                  chosenVariantEl.textContent = dotColor;
+                }
+              }
+            });
+          }
+
           initDriftZoom();
         });
       });
@@ -878,6 +899,59 @@
         const colorName = this.getAttribute('data-color') || '';
         if (chosenVariantEl) {
           chosenVariantEl.textContent = colorName;
+        }
+
+        // Change main product image if data-image or matching thumbnail exists
+        const mainImage = document.getElementById('main-product-image');
+        const targetImage = this.getAttribute('data-image');
+        const thumbnails = document.querySelectorAll('.thumbnail-item');
+
+        if (mainImage) {
+          let matchedThumb = null;
+
+          if (targetImage) {
+            mainImage.src = targetImage;
+            mainImage.setAttribute('data-zoom', targetImage);
+            if (thumbnails.length) {
+              matchedThumb = Array.from(thumbnails).find(t => t.getAttribute('data-image') === targetImage);
+            }
+          } else if (colorName && thumbnails.length) {
+            matchedThumb = Array.from(thumbnails).find(t => {
+              const tColor = t.getAttribute('data-color');
+              const tImg = t.getAttribute('data-image') || '';
+              return (tColor && tColor.toLowerCase() === colorName.toLowerCase()) ||
+                     tImg.toLowerCase().includes(colorName.toLowerCase());
+            });
+            if (matchedThumb) {
+              const imgSrc = matchedThumb.getAttribute('data-image');
+              if (imgSrc) {
+                mainImage.src = imgSrc;
+                mainImage.setAttribute('data-zoom', imgSrc);
+              }
+            }
+          }
+
+          if (matchedThumb) {
+            thumbnails.forEach(t => t.classList.remove('active'));
+            matchedThumb.classList.add('active');
+          }
+
+          // Re-initialize Drift zoom if available
+          if (typeof Drift !== 'undefined') {
+            const zoomContainer = document.querySelector('.image-zoom-container');
+            if (zoomContainer) {
+              zoomContainer.innerHTML = '';
+            }
+            new Drift(mainImage, {
+              paneContainer: document.querySelector('.image-zoom-container'),
+              inlinePane: window.innerWidth < 768,
+              inlineOffsetY: -85,
+              containInline: true,
+              hoverBoundingBox: false,
+              zoomFactor: 3,
+              handleTouch: false
+            });
+          }
         }
       }
     });

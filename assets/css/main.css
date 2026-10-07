@@ -5124,9 +5124,17 @@ section,
 }
 
 .category-pagination .results-label .current-page,
-.category-pagination .results-label .total-pages {
+.category-pagination .results-label .total-pages,
+.category-pagination .results-label .fw-bold,
+.category-pagination .results-label strong {
   font-weight: 600;
   color: var(--default-color);
+}
+
+.category-pagination .pagination-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .category-pagination .page-list {
@@ -5286,6 +5294,11 @@ section,
   .category-pagination .results-label {
     text-align: center;
     font-size: 13px;
+  }
+
+  .category-pagination .pagination-actions {
+    justify-content: center;
+    gap: 12px;
   }
 
   .category-pagination .goto-group {

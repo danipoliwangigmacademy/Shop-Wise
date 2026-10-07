@@ -20,10 +20,18 @@
     line-height: 1.5;
 
     .current-page,
-    .total-pages {
+    .total-pages,
+    .fw-bold,
+    strong {
       font-weight: 600;
       color: var(--default-color);
     }
+  }
+
+  .pagination-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
   }
 
   .page-list {
@@ -183,6 +191,11 @@
     .results-label {
       text-align: center;
       font-size: 13px;
+    }
+
+    .pagination-actions {
+      justify-content: center;
+      gap: 12px;
     }
 
     .goto-group {
