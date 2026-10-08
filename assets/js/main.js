@@ -1017,7 +1017,7 @@
           }
         }
 
-        const priceEl = card.querySelector('.price-current, .current, .price-now, .product-price, .item-price') || card.querySelector('[data-price]');
+        const priceEl = card.querySelector('.price-current, .current, .price-now, .product-price, .item-price, .tile-price') || card.querySelector('[data-price]');
         if (priceEl) {
           price = priceEl.getAttribute('data-price') ? `Rp ${parseInt(priceEl.getAttribute('data-price')).toLocaleString('id-ID')}` : priceEl.textContent.trim();
         }

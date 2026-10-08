@@ -145,13 +145,12 @@
       badge: 'Baru',
       price: 89.00,
       oldPrice: 120.00,
-      image: 'assets/img/product/product-1.webp',
+      image: 'assets/img/product/product-1-ori.webp',
       thumbnails: [
-        'assets/img/product/product-1.webp',
-        'assets/img/product/product-6.webp',
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-11.webp',
-        'assets/img/product/product-12.webp'
+        'assets/img/product/product-1-ori.webp',
+        'assets/img/product/product-1-navy.webp',
+        'assets/img/product/product-1-ivory.webp',
+        'assets/img/product/product-1-moss.webp'
       ],
       rating: 4.6,
       reviewsCount: 112,
@@ -197,13 +196,11 @@
       badge: 'Diskon 25%',
       price: 165.00,
       oldPrice: 220.00,
-      image: 'assets/img/product/product-8.webp',
+      image: 'assets/img/product/product-8-black.webp',
       thumbnails: [
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-11.webp',
-        'assets/img/product/product-5.webp',
-        'assets/img/product/product-1.webp',
-        'assets/img/product/product-2.webp'
+        'assets/img/product/product-8-black.webp',
+        'assets/img/product/product-8-navy.webp',
+        'assets/img/product/product-8-white.webp'
       ],
       rating: 4.7,
       reviewsCount: 58,
@@ -223,13 +220,12 @@
       badge: 'Produk Terbaru',
       price: 89.00,
       oldPrice: 119.00,
-      image: 'assets/img/product/product-11.webp',
+      image: 'assets/img/product/product-11-obsidian.webp',
       thumbnails: [
-        'assets/img/product/product-11.webp',
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-5.webp',
-        'assets/img/product/product-2.webp',
-        'assets/img/product/product-3.webp'
+        'assets/img/product/product-11-obsidian.webp',
+        'assets/img/product/product-11-ivory.webp',
+        'assets/img/product/product-11-moss.webp',
+        'assets/img/product/product-11-ori.webp'
       ],
       rating: 3.8,
       reviewsCount: 12,
@@ -301,13 +297,9 @@
       badge: 'Sedang Trending',
       price: 44.50,
       oldPrice: 59.00,
-      image: 'assets/img/product/product-3.webp',
+      image: 'assets/img/product/product-3-ori.webp',
       thumbnails: [
-        'assets/img/product/product-3.webp',
-        'assets/img/product/product-10.webp',
-        'assets/img/product/product-4.webp',
-        'assets/img/product/product-9.webp',
-        'assets/img/product/product-6.webp'
+        'assets/img/product/product-3-ori.webp'
       ],
       rating: 5.0,
       reviewsCount: 53,
@@ -351,13 +343,12 @@
       badge: '-15%',
       price: 68.00,
       oldPrice: 80.00,
-      image: 'assets/img/product/product-10.webp',
+      image: 'assets/img/product/product-10-navy.webp',
       thumbnails: [
-        'assets/img/product/product-10.webp',
-        'assets/img/product/product-2.webp',
-        'assets/img/product/product-7.webp',
-        'assets/img/product/product-3.webp',
-        'assets/img/product/product-6.webp'
+        'assets/img/product/product-10-navy.webp',
+        'assets/img/product/product-10-sapphire.webp',
+        'assets/img/product/product-10-ivory.webp',
+        'assets/img/product/product-10-moss.webp'
       ],
       rating: 4.7,
       reviewsCount: 45,
@@ -401,13 +392,12 @@
       badge: 'Rating Tertinggi',
       price: 134.99,
       oldPrice: 169.00,
-      image: 'assets/img/product/product-6.webp',
+      image: 'assets/img/product/product-6-black.webp',
       thumbnails: [
-        'assets/img/product/product-6.webp',
-        'assets/img/product/product-9.webp',
-        'assets/img/product/product-1.webp',
-        'assets/img/product/product-12.webp',
-        'assets/img/product/product-7.webp'
+        'assets/img/product/product-6-black.webp',
+        'assets/img/product/product-6-grey.webp',
+        'assets/img/product/product-6-maroon.webp',
+        'assets/img/product/product-6-navy.webp'
       ],
       rating: 4.5,
       reviewsCount: 68,
@@ -576,13 +566,9 @@
       badge: '-45%',
       price: 98.00,
       oldPrice: 179.00,
-      image: 'assets/img/product/product-6.webp',
+      image: 'assets/img/product/product-13-ori.webp',
       thumbnails: [
-        'assets/img/product/product-6.webp',
-        'assets/img/product/product-1.webp',
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-9.webp',
-        'assets/img/product/product-11.webp'
+        'assets/img/product/product-13-ori.webp'
       ],
       rating: 4.6,
       reviewsCount: 312,
@@ -627,13 +613,9 @@
       badge: '-35%',
       price: 136.00,
       oldPrice: 210.00,
-      image: 'assets/img/product/product-2.webp',
+      image: 'assets/img/product/product-2-classic.webp',
       thumbnails: [
-        'assets/img/product/product-2.webp',
-        'assets/img/product/product-5.webp',
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-4.webp',
-        'assets/img/product/product-6.webp'
+        'assets/img/product/product-2-classic.webp'
       ],
       rating: 4.0,
       reviewsCount: 189,
@@ -676,13 +658,12 @@
       badge: 'Populer',
       price: 99.00,
       oldPrice: 149.00,
-      image: 'assets/img/product/product-5.webp',
+      image: 'assets/img/product/product-5-ivory.webp',
       thumbnails: [
-        'assets/img/product/product-5.webp',
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-11.webp',
-        'assets/img/product/product-2.webp',
-        'assets/img/product/product-7.webp'
+        'assets/img/product/product-5-ivory.webp',
+        'assets/img/product/product-5-navy.webp',
+        'assets/img/product/product-5-sapphire.webp',
+        'assets/img/product/product-5-moss.webp'
       ],
       rating: 4.8,
       reviewsCount: 124,
@@ -702,13 +683,11 @@
       badge: 'Terbaru',
       price: 42.00,
       oldPrice: 58.00,
-      image: 'assets/img/product/product-8.webp',
+      image: 'assets/img/product/product-8-black.webp',
       thumbnails: [
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-11.webp',
-        'assets/img/product/product-5.webp',
-        'assets/img/product/product-1.webp',
-        'assets/img/product/product-2.webp'
+        'assets/img/product/product-8-black.webp',
+        'assets/img/product/product-8-navy.webp',
+        'assets/img/product/product-8-white.webp'
       ],
       rating: 4.7,
       reviewsCount: 86,
@@ -728,13 +707,9 @@
       badge: 'Diskon',
       price: 37.00,
       oldPrice: 55.00,
-      image: 'assets/img/product/product-2.webp',
+      image: 'assets/img/product/product-2-modern.webp',
       thumbnails: [
-        'assets/img/product/product-2.webp',
-        'assets/img/product/product-5.webp',
-        'assets/img/product/product-8.webp',
-        'assets/img/product/product-4.webp',
-        'assets/img/product/product-6.webp'
+        'assets/img/product/product-2-modern.webp'
       ],
       rating: 4.9,
       reviewsCount: 95,
@@ -754,13 +729,12 @@
       badge: 'Terpanas',
       price: 59.00,
       oldPrice: 95.00,
-      image: 'assets/img/product/product-9.webp',
+      image: 'assets/img/product/product-9-black.webp',
       thumbnails: [
-        'assets/img/product/product-9.webp',
-        'assets/img/product/product-11.webp',
-        'assets/img/product/product-1.webp',
-        'assets/img/product/product-6.webp',
-        'assets/img/product/product-4.webp'
+        'assets/img/product/product-9-black.webp',
+        'assets/img/product/product-9-maroon.webp',
+        'assets/img/product/product-9-navy.webp',
+        'assets/img/product/product-9-white.webp'
       ],
       rating: 4.8,
       reviewsCount: 142,
@@ -780,13 +754,12 @@
       badge: 'Terlaris',
       price: 89.00,
       oldPrice: 149.00,
-      image: 'assets/img/product/product-4.webp',
+      image: 'assets/img/product/product-4-grey.webp',
       thumbnails: [
-        'assets/img/product/product-4.webp',
-        'assets/img/product/product-10.webp',
-        'assets/img/product/product-2.webp',
-        'assets/img/product/product-6.webp',
-        'assets/img/product/product-8.webp'
+        'assets/img/product/product-4-grey.webp',
+        'assets/img/product/product-4-navy.webp',
+        'assets/img/product/product-4-maroon.webp',
+        'assets/img/product/product-4-moss.webp'
       ],
       rating: 4.8,
       reviewsCount: 168,
@@ -832,12 +805,10 @@
   PRODUCTS_CATALOG['hub-audio-presisi'] = PRODUCTS_CATALOG['tas-pesta-rantai-berbantalan'];
   PRODUCTS_CATALOG['jam-tangan-pintar-pro'] = PRODUCTS_CATALOG['kacamata-hitam-cokelat'];
   PRODUCTS_CATALOG['kamera-pendamping-harian'] = PRODUCTS_CATALOG['baju-polo-biru-navy'];
-  PRODUCTS_CATALOG['lampu-meja-ergonomis'] = PRODUCTS_CATALOG['sendal-slip-on-wanita'];
   PRODUCTS_CATALOG['diffuser-aroma-keramik'] = PRODUCTS_CATALOG['sepatu-canvas-pria-kasual'];
   PRODUCTS_CATALOG['jam-dinding-minimalis'] = PRODUCTS_CATALOG['kursi-klasik-ruang-tamu-modern'];
   PRODUCTS_CATALOG['bantalan-pengisi-daya-nirkabel'] = PRODUCTS_CATALOG['tas-pinggang-tactical'];
   PRODUCTS_CATALOG['stasiun-daya-portabel'] = PRODUCTS_CATALOG['hoodie-premium-pria'];
-  PRODUCTS_CATALOG['ransel-teknologi-urban'] = PRODUCTS_CATALOG['tas-jinjing-wanita-premium'];
 
   /**
    * Helper to format price to string in Rupiah
